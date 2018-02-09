@@ -59,7 +59,7 @@ CREATE TABLE uniforme(
   tipo_titular_reserva VARCHAR(20),
   nome VARCHAR(50));
 
-CREATE TABLE ccr(
+CREATE TABLE cor(
   cod_cor CHAR(10) NOT NULL,
   tonalidades_cores VARCHAR(20),
   descricao VARCHAR(255));
@@ -75,7 +75,7 @@ ALTER TABLE diretor ADD PRIMARY KEY(cod_diretor);
 ALTER TABLE patrocinio ADD PRIMARY KEY(cod_patrocinador, nome);
 ALTER TABLE patrocinador ADD PRIMARY KEY(cod_patrocinador);
 ALTER TABLE uniforme ADD PRIMARY KEY(cod_uniforme);
-ALTER TABLE ccr ADD PRIMARY KEY(cod_cor);
+ALTER TABLE cor ADD PRIMARY KEY(cod_cor);
 
 ALTER TABLE joga ADD FOREIGN KEY(cpf_jogador) REFERENCES jogador(cpf);
 ALTER TABLE joga ADD FOREIGN KEY(nome) REFERENCES time (nome);
@@ -88,5 +88,5 @@ ALTER TABLE time_profissional ADD FOREIGN KEY(nome) REFERENCES time (nome);
 ALTER TABLE time_profissional ADD FOREIGN KEY(cod_diretor) REFERENCES diretor (cod_diretor);
 ALTER TABLE patrocinio ADD FOREIGN KEY(nome) REFERENCES time (nome);
 ALTER TABLE patrocinio ADD FOREIGN KEY(cod_patrocinador) REFERENCES patrocinador (cod_patrocinador);
-ALTER TABLE uniforme ADD FOREIGN KEY(cod_cor) REFERENCES ccr(cod_cor);
+ALTER TABLE uniforme ADD FOREIGN KEY(cod_cor) REFERENCES cor(cod_cor);
 ALTER TABLE uniforme ADD FOREIGN KEY(nome) REFERENCES time (nome);
