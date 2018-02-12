@@ -1,3 +1,7 @@
+<?php
+require "../modelo/time.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,15 +43,19 @@
       <tr>
         <th>Nome</th>
         <th>Tipo</th>
-        <th>Cod Uniforme</th>
+        <th>Código do uniforme</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>Smith</td>
-      </tr>
+    <?php
+    foreach (ler() as $value) {
+        echo "<tr>
+                    <td>".$value["nome"]."</td>
+                    <td>".$value["tipo"]."</td>
+                    <td>".$value["cod_uniforme"]."</td>
+              </tr>";
+    }
+    ?>
     </tbody>
   </table>
 </div>
