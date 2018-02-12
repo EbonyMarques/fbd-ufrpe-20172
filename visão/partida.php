@@ -57,8 +57,9 @@ require "../controlador/partida.php";
                     <td>".$value["nome_time_casa"]."</td>
                     <td>".$value["nome_time_fora"]."</td>
                     <td>".$value["placar"]."</td>
-                    <td>".$value["data_inicio"]."</td>
-                    <td>".$value["data_fim"]."</td>
+                    <td>".$value["local"]."</td>
+                    <td>".$value["data"]."</td>
+                    <td>".$value["rg_arbitro"]."</td>
               </tr>";
     }
     ?>

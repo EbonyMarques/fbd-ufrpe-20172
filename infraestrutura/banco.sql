@@ -14,8 +14,7 @@ CREATE TABLE joga(
 
 CREATE TABLE time(
   nome VARCHAR(50) NOT NULL,
-  tipo VARCHAR(20),
-  cod_uniforme CHAR(10));
+  tipo VARCHAR(20));
 
 CREATE TABLE partida(
   nome_time_casa VARCHAR(50) NOT NULL,
@@ -79,7 +78,6 @@ ALTER TABLE cor ADD PRIMARY KEY(cod_cor);
 
 ALTER TABLE joga ADD FOREIGN KEY(cpf_jogador) REFERENCES jogador(cpf);
 ALTER TABLE joga ADD FOREIGN KEY(nome) REFERENCES time (nome);
-ALTER TABLE time ADD FOREIGN KEY(cod_uniforme) REFERENCES uniforme (cod_uniforme);
 ALTER TABLE partida ADD FOREIGN KEY(nome_time_casa) REFERENCES time(nome);
 ALTER TABLE partida ADD FOREIGN KEY(nome_time_fora) REFERENCES time(nome);
 ALTER TABLE partida ADD FOREIGN KEY(rg_arbitro) REFERENCES arbitro_principal (rg_arbitro);

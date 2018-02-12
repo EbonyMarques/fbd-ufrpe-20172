@@ -44,7 +44,6 @@ require "../controlador/time.php";
       <tr>
         <th>Nome</th>
         <th>Tipo</th>
-        <th>Código do uniforme</th>
       </tr>
     </thead>
     <tbody>
@@ -53,7 +52,6 @@ require "../controlador/time.php";
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["tipo"]."</td>
-                    <td>".$value["cod_uniforme"]."</td>
               </tr>";
     }
     ?>
