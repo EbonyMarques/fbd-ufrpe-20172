@@ -40,9 +40,9 @@ require "../controlador/uniforme.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Codigo</th>
-        <th>Descricao</th>
-        <th>Código cor</th>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Código da cor</th>
         <th>Tipo titular reserva</th>
         <th>Nome</th>
       </tr>

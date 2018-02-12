@@ -41,7 +41,7 @@ require "../controlador/timeProfissional.php";
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Código diretor</th>
+        <th>Código do diretor</th>
       </tr>
     </thead>
     <tbody>

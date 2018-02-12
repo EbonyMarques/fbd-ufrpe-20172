@@ -33,15 +33,15 @@
     </nav>
 
     <div class="container">
-        <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
-          <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
-          </div>
+        <h3>Novo time profissional</h3>
+        <form action="/controllerTimeProfissional.php">
           <div class="form-group">
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome">
+          </div>
+          <div class="form-group">
+            <label for="cod_diretor">Código do diretor:</label>
+            <input type="text" class="form-control" id="cod_diretor">
           </div>
           <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

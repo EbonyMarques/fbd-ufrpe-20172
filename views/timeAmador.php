@@ -41,8 +41,8 @@ require "../controlador/timeAmador.php";
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Cidade origem</th>
-        <th>Ano criação</th>
+        <th>Cidade de origem</th>
+        <th>Ano de criação</th>
       </tr>
     </thead>
     <tbody>
