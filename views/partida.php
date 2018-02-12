@@ -1,5 +1,5 @@
 <?php
-require "../modelo/partida.php";
+require "../controlador/partida.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ require "../modelo/partida.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["nome_time_casa"]."</td>
                     <td>".$value["nome_time_fora"]."</td>

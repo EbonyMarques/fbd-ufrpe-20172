@@ -1,5 +1,5 @@
 <?php
-require "../modelo/joga.php";
+require "../controlador/joga.php";
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ require "../modelo/joga.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cpf_jogador"]."</td>
                     <td>".$value["nome"]."</td>

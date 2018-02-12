@@ -1,5 +1,5 @@
 <?php
-require "../modelo/timeProfissional.php";
+require "../controlador/timeProfissional.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,7 +46,7 @@ require "../modelo/timeProfissional.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["cod_diretor"]."</td>

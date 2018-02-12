@@ -1,5 +1,5 @@
 <?php
-require "../modelo/arbitroPrincipal.php";
+require "../controlador/arbitroPrincipal.php";
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ require "../modelo/arbitroPrincipal.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["rg_arbitro"]."</td>
                     <td>".$value["nome"]."</td>

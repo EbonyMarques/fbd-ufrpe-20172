@@ -1,5 +1,5 @@
 <?php
-require "../modelo/uniforme.php";
+require "../controlador/uniforme.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -49,7 +49,7 @@ require "../modelo/uniforme.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cod_uniforme"]."</td>
                     <td>".$value["descricao"]."</td>
