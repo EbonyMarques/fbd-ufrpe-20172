@@ -51,10 +51,6 @@
                 <label for="tipo_titular_reserva">Tipo titular reserva:</label>
                 <input type="text" class="form-control" name="tipo_titular_reserva">
             </div>
-            <div class="form-group">
-                <label for="cod_cor">Código da cor:</label>
-                <input type="text" class="form-control" name="cod_cor">
-            </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

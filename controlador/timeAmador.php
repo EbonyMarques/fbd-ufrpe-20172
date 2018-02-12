@@ -1,6 +1,29 @@
 <?php
     require "../modelo/timeAmador.php";
 
+    if(isset($_POST['acao'])) {
+        if ($_POST["acao"]=="cadastrar"){
+            $permitir = true;
+            if ($permitir) {
+                $dados = array(
+                    'nome' => $_POST('nome'),
+                    'cidade_origem' => $_POST('cidade_origem'),
+                    'ano_criacao' => $_POST('ano_criacao')
+                );
+                novo($dados);
+            }
+            else {
+                echo "erro";
+            }
+        }
+        if ($_POST["acao"]=="alterar"){
+            alterar('');
+        }
+        if ($_POST["acao"]=="excluir"){
+            excluir('');
+        }
+    }
+
     function exibeDados(){
         $resultado = ler();
         if ($resultado) {
@@ -10,6 +33,12 @@
         }
     }
     function novo($value) {
+        # pega os dados do form e manda pro modelo...
+    }
+    function alterar($value) {
+        # pega os dados do form e manda pro modelo...
+    }
+    function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...
     }
 
