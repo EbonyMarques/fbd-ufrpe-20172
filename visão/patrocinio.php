@@ -42,7 +42,7 @@ require "../controlador/patrocinio.php";
     <thead>
       <tr>
         <th>Código do patrocinador</th>
-        <th>Nome</th>
+        <th>Nome do time</th>
       </tr>
     </thead>
     <tbody>

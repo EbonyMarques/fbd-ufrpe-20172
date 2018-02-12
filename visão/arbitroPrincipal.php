@@ -42,7 +42,7 @@ require "../controlador/arbitroPrincipal.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>RG do árbitro</th>
+        <th>RG</th>
         <th>Nome</th>
         <th>Tipo de habilitação</th>
       </tr>

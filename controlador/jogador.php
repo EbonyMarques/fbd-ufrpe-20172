@@ -6,13 +6,13 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cpf' => $_POST['cpf'],
-                    'nome' => $_POST['nome']
+                    "cpf" => $_POST["cpf"],
+                    "nome" => $_POST["nome"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de jogador!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -31,19 +31,19 @@
             return false;
         }
     }
-    function novo($value) {
-        $permissao = cadastrar($value['cpf'],$value['nome']);
+    function novo($valor) {
+        $permissao = cadastrar($valor['cpf'],$valor['nome']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/jogador.php'>";
         }
     }
-    function alterar($value) {
-        $permissao = atualizar($value['cpf'],$value['nome']);
+    function alterar($valor) {
+        $permissao = atualizar($valor['cpf'],$valor['nome']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/jogador.php'>";
         }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

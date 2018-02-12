@@ -43,10 +43,6 @@
                 <label for="tipo">Tipo:</label>
                 <input type="text" class="form-control" name="tipo">
             </div>
-            <div class="form-group">
-                <label for="cod_uniforme">Código do uniforme:</label>
-                <input type="text" class="form-control" name="cod_uniforme">
-            </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

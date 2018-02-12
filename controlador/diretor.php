@@ -6,14 +6,14 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cod_diretor' => $_POST['cod_diretor'],
-                    'nome' => $_POST['nome'],
-                    'sobrenome' => $_POST['sobrenome']
+                    "cod_diretor" => $_POST["cod_diretor"],
+                    "nome" => $_POST["nome"],
+                    "sobrenome" => $_POST["sobrenome"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de diretor!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -32,19 +32,19 @@
             return false;
         }
     }
-    function novo($value) {
-        $permissao = cadastrar($value['cod_diretor'],$value['nome'],$value['sobrenome']);
+    function novo($valor) {
+        $permissao = cadastrar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/diretor.php'>";
         }
     }
-    function alterar($value) {
-        $permissao = atualizar($value['cod_diretor'],$value['nome'],$value['sobrenome']);
+    function alterar($valor) {
+        $permissao = atualizar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/diretor.php'>";
         }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

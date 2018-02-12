@@ -1,9 +1,9 @@
 <?php
     require "..\infraestrutura\auxiliar.php";
 
-    function cadastrar($nome, $tipo, $cod_uniforme) {
+    function cadastrar($nome, $tipo) {
         $conexao = conectar();
-        $sql = "INSERT INTO time values ('$nome', '$tipo', '$cod_uniforme')";
+        $sql = "INSERT INTO time values ('$nome', '$tipo')";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
         desconectar($conexao);
 

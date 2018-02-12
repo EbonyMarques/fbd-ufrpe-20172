@@ -10,9 +10,15 @@ INSERT INTO time VALUES("Clube Náutico Capibaribe", "Profissional");
 INSERT INTO time VALUES("Sport Club do Recife", "Profissional");
 INSERT INTO time VALUES("Artilheiros de BSI", "Amador");
 
+INSERT INTO time_amador VALUES("Artilheiros de BSI", "Recife", "2018");
+
 INSERT INTO diretor VALUES("001","Nicollas","Bastos");
 INSERT INTO diretor VALUES("002","Luciano","Trigueiro");
 INSERT INTO diretor VALUES("003","Eric","Moritsuka");
+
+INSERT INTO time_profissional VALUES("Santa Cruz Futebol Clube","001");
+INSERT INTO time_profissional VALUES("Clube Náutico Capibaribe","003");
+INSERT INTO time_profissional VALUES("Sport Club do Recife","002");
 
 INSERT INTO jogador VALUES("11111111111","Carlinhos Bala");
 INSERT INTO jogador VALUES("22222222222","Ebony Marques");
@@ -27,11 +33,6 @@ INSERT INTO jogador VALUES("00000000000","Lionel Messi");
 INSERT INTO jogador VALUES("12121212121","Cristiano Ronaldo");
 INSERT INTO jogador VALUES("21212121121","Eden Hazard");
 
-INSERT INTO arbitro_principal VALUES("123456789","João Vinicius","A");
-INSERT INTO arbitro_principal VALUES("891234556","Maria Joana","AB");
-INSERT INTO arbitro_principal VALUES("128577232","Renata Vasconcelos","B");
-INSERT INTO arbitro_principal VALUES("665345438","Ricardo Gomes","C");
-
 INSERT INTO patrocinador VALUES("Heineken", "Heineken International");
 INSERT INTO patrocinador VALUES("Lays", "Lays");
 INSERT INTO patrocinador VALUES("Audi", "Audi Brasil");
@@ -41,6 +42,11 @@ INSERT INTO patrocinio VALUES("Audi", "Santa Cruz Futebol Clube");
 INSERT INTO patrocinio VALUES("Lays", "Santa Cruz Futebol Clube");
 INSERT INTO patrocinio VALUES("Santander", "Sport Club do Recife");
 INSERT INTO patrocinio VALUES("Heineken", "Artilheiros de BSI");
+
+INSERT INTO arbitro_principal VALUES("123456789","João Vinicius","A");
+INSERT INTO arbitro_principal VALUES("891234556","Maria Joana","AB");
+INSERT INTO arbitro_principal VALUES("128577232","Renata Vasconcelos","B");
+INSERT INTO arbitro_principal VALUES("665345438","Ricardo Gomes","C");
 
 INSERT INTO uniforme VALUES("santa1", "Uniforme titular do Santa Cruz", "#ff0000", "titular", "Santa Cruz Futebol Clube");
 INSERT INTO uniforme VALUES("santa2", "Uniforme reserva do Santa Cruz", "#ffffff", "reserva", "Santa Cruz Futebol Clube");
@@ -53,12 +59,6 @@ INSERT INTO uniforme VALUES("bsi2", "Uniforme reserva do IS Gunners", "#ff0000",
 
 INSERT INTO partida VALUES("Santa Cruz Futebol Clube", "Sport Club do Recife", "1x1", "Estádio do Arruda", "180212", "891234556");
 INSERT INTO partida VALUES("Clube Náutico Capibaribe", "Artilheiros de BSI", "0x2", "Estádio dos Aflitos", "180212", "128577232");
-
-INSERT INTO time_amador VALUES("Artilheiros de BSI", "Recife", "2018");
-
-INSERT INTO time_profissional VALUES("Santa Cruz Futebol Clube","001");
-INSERT INTO time_profissional VALUES("Clube Náutico Capibaribe","003");
-INSERT INTO time_profissional VALUES("Sport Club do Recife","002");
 
 INSERT INTO joga VALUES("77777777777","Santa Cruz Futebol Clube","Atacante","2017-01-01","2018-01-01");
 INSERT INTO joga VALUES("88888888888","Santa Cruz Futebol Clube","Goleiro","2017-06-03","2018-06-03");

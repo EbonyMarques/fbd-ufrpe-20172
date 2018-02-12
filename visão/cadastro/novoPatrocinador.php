@@ -36,7 +36,7 @@
         <h2>Novo patrocinador</h2>
         <form action="/fbd/controlador/patrocinador.php" method="post">
             <div class="form-group">
-                <label for="cod_patrocinador">Código do patrocinador:</label>
+                <label for="cod_patrocinador">Código:</label>
                 <input type="text" class="form-control" name="cod_patrocinador">
             </div>
             <div class="form-group">

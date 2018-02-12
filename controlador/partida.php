@@ -6,17 +6,17 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'nome_time_casa' => $_POST['nome_time_casa'],
-                    'nome_time_fora' => $_POST['nome_time_fora'],
-                    'placar' => $_POST['placar'],
-                    'local' => $_POST['local'],
-                    'data' => $_POST['data'],
-                    'rg' => $_POST['rg']
+                    "nome_time_casa" => $_POST["nome_time_casa"],
+                    "nome_time_fora" => $_POST["nome_time_fora"],
+                    "placar" => $_POST["placar"],
+                    "local" => $_POST["local"],
+                    "data" => $_POST["data"],
+                    "rg" => $_POST["rg"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de partida!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -35,19 +35,19 @@
             return false;
         }
     }
-    function novo($value) {
-        $permissao = cadastrar($value['nome_time_casa'],$value['nome_time_fora'],$value['placar'],$value['local'],$value['data'],$value['rg']);
+    function novo($valor) {
+        $permissao = cadastrar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/partida.php'>";
         }
     }
-    function alterar($value) {
-        $permissao = atualizar($value['nome_time_casa'],$value['nome_time_fora'],$value['placar'],$value['local'],$value['data'],$value['rg']);
+    function alterar($valor) {
+        $permissao = atualizar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/partida.php'>";
         }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

@@ -41,7 +41,7 @@ require "../controlador/patrocinador.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Código do patrocinador</th>
+        <th>Código</th>
         <th>Nome</th>
       </tr>
     </thead>

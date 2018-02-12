@@ -40,7 +40,7 @@
                 <input type="text" class="form-control" name="cod_patrocinador">
             </div>
             <div class="form-group">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome do time:</label>
                 <input type="text" class="form-control" name="nome">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />

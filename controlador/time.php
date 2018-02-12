@@ -6,14 +6,13 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'nome' => $_POST('nome'),
-                    'tipo' => $_POST('tipo'),
-                    'cod_uniforme' => $_POST('cod_uniforme')
+                    "nome" => $_POST["nome"],
+                    "tipo" => $_POST["tipo"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de time!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -32,13 +31,22 @@
             return false;
         }
     }
-    function novo($value) {
-        # pega os dados do form e manda pro modelo...
+    function novo($valor) {
+        $resultado = cadastrar($valor["nome"], $valor["tipo"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/time.php'>";
+        }
     }
-    function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+    function alterar($valor) {
+        $resultado = atualizar($valor["nome"], $valor["tipo"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/time.php'>";
+        }
+
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

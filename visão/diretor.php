@@ -41,7 +41,7 @@ require "../controlador/diretor.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Código do diretor</th>
+        <th>Código</th>
         <th>Nome</th>
         <th>Sobrenome</th>
       </tr>

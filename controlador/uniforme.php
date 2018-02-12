@@ -6,15 +6,16 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cod_uniforme' => $_POST('cod_uniforme'),
-                    'descricao' => $_POST('descricao'),
-                    'cod_cor' => $_POST('cod_cor'),
-                    'tipo_titular_reserva' => $_POST('tipo_titular_reserva')
+                    "cod_uniforme" => $_POST["cod_uniforme"],
+                    "descricao" => $_POST["descricao"],
+                    "cod_cor" => $_POST["cod_cor"],
+                    "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
+                    "nome" => $_POST["nome"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro!1";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -33,13 +34,21 @@
             return false;
         }
     }
-    function novo($value) {
-        # pega os dados do form e manda pro modelo...
+    function novo($valor){
+        $resultado = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/uniforme.php'>";
+        }
     }
-    function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+    function alterar($valor) {
+        $resultado = atualizar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/uniforme.php'>";
+        }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

@@ -6,13 +6,13 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cod_patrocinador' => $_POST('cod_patrocinador'),
-                    'nome' => $_POST('nome')
+                    "cod_patrocinador" => $_POST["cod_patrocinador"],
+                    "nome" => $_POST["nome"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de patrocínio!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -31,13 +31,21 @@
             return false;
         }
     }
-    function novo($value) {
-        # pega os dados do form e manda pro modelo...
+    function novo($valor) {
+        $resultado = cadastrar($valor["cod_patrocinador"], $valor["nome"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinio.php'>";
+        }
     }
-    function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+    function alterar($valor) {
+        $resultado = atualizar($valor["cod_patrocinador"], $valor["nome"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinio.php'>";
+        }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

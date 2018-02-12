@@ -6,14 +6,14 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cod_cor' => $_POST['$cod_cor'],
-                    'tonalidade' => $_POST['tonalidade'],
-                    'descricao' => $_POST['descricao']
+                    "cod_cor" => $_POST["$cod_cor"],
+                    "tonalidade" => $_POST["tonalidade"],
+                    "descricao" => $_POST["descricao"]
                 );
                 novo($dados);
             }
             else {
-                echo "erro";
+                echo "Erro de cadastro de cor!";
             }
         }
         if ($_POST["acao"]=="alterar"){
@@ -32,19 +32,19 @@
             return false;
         }
     }
-    function novo($value) {
-        $permissao = cadastrar($value['cpf_jogador'],$value['tonalidade'],$value['descricao']);
+    function novo($valor) {
+        $permissao = cadastrar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/cor.php'>";
         }
     }
-    function alterar($value) {
-        $permissao = atualizar($value['cpf_jogador'],$value['tonalidade'],$value['descricao']);
+    function alterar($valor) {
+        $permissao = atualizar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/cor.php'>";
         }
     }
-    function excluirPorId($value) {
+    function excluirPorId($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

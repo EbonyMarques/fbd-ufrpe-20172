@@ -41,11 +41,12 @@ require "../controlador/uniforme.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Código</th>
-        <th>Descrição</th>
+        <th>Código do uniforme</th>
         <th>Código da cor</th>
-        <th>Tipo titular reserva</th>
         <th>Nome</th>
+        <th>Descrição</th>
+        <th>Tipo</th>
+
       </tr>
     </thead>
     <tbody>
@@ -53,10 +54,10 @@ require "../controlador/uniforme.php";
     foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cod_uniforme"]."</td>
-                    <td>".$value["descricao"]."</td>
                     <td>".$value["cod_cor"]."</td>
-                    <td>".$value["tipo_titular_reserva"]."</td>
                     <td>".$value["nome"]."</td>
+                    <td>".$value["descricao"]."</td>
+                    <td>".$value["tipo_titular_reserva"]."</td>
               </tr>";
     }
     ?>

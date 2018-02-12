@@ -41,7 +41,7 @@ require "../controlador/cor.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Código de cor</th>
+        <th>Código da cor</th>
         <th>Tonalidade</th>
         <th>Descrição</th>
       </tr>
