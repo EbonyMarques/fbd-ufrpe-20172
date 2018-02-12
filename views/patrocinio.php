@@ -22,7 +22,7 @@
           <li><a href="partida.php">Partida</a></li>
           <li><a href="arbitroPrincipal.php">Arbitro Principal</a></li>
           <li><a href="timeAmador.php">Time Amador</a></li>
-          <li><a href="timeProfissional">Time Profissional</a></li>
+          <li><a href="timeProfissional.php">Time Profissional</a></li>
           <li><a href="diretor.php">Diretor</a></li>
           <li class="active"><a href="patrocinio.php">Patrocinio</a></li>
           <li><a href="patrocinador.php">Patrocinador</a></li>
