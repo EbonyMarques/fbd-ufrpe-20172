@@ -1,9 +1,9 @@
 <?php
     require "..\infraestrutura\auxiliar.php";
 
-    function cadastrar($cpf, $nome) {
+    function cadastrar($nome_time_casa, $nome_time_fora, $placar, $local, $data, $rg_arbitro) {
         $conexao = conectar();
-        $sql = "INSERT INTO jogador values ('$cpf', '$nome')";
+        $sql = "INSERT INTO partida values ('$nome_time_casa', '$nome_time_fora', '$placar', '$local', '$data', '$rg_arbitro')";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
         desconectar($conexao);
 
@@ -12,7 +12,7 @@
 
     function ler() {
         $conexao = conectar();
-        $sql = "SELECT * FROM jogador";
+        $sql = "SELECT * FROM partida";
         $resultado = mysqli_query($conexao, $sql);
         desconectar($conexao);
 
@@ -20,21 +20,20 @@
 
     };
 
-    function atualizar($cpf, $nome) {
+    function atualizar($nome_time_casa, $nome_time_fora, $placar, $local, $data, $rg_arbitro) {
         $conexao = conectar();
-        $sql = "UPDATE jogador SET nome='$nome' WHERE cpf='$cpf'";
+        $sql = "UPDATE partida SET placar='$placar', local='$local', data='$data', rg_arbitro='$rg_arbitro' WHERE nome_time_casa='$nome_time_casa' AND nome_time_fora='$nome_time_fora'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
         desconectar($conexao);
 
         return true;
     }
 
-    function excluir($cpf) {
+    function excluir($nome_time_casa, $nome_time_fora) {
         $conexao = conectar();
-        $sql = "DELETE FROM jogador WHERE cpf='$cpf'";
+        $sql = "DELETE FROM partida WHERE nome_time_casa='$nome_time_casa' AND nome_time_fora='$nome_time_fora'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
         desconectar($conexao);
 
         return true;
     };
-

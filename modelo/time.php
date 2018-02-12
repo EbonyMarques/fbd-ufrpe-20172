@@ -1,9 +1,9 @@
 <?php
     require "..\infraestrutura\auxiliar.php";
 
-    function cadastrar($cpf, $nome) {
+    function cadastrar($nome, $tipo, $cod_uniforme) {
         $conexao = conectar();
-        $sql = "INSERT INTO jogador values ('$cpf', '$nome')";
+        $sql = "INSERT INTO time values ('$nome', '$tipo', '$cod_uniforme')";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
         desconectar($conexao);
 
@@ -12,7 +12,7 @@
 
     function ler() {
         $conexao = conectar();
-        $sql = "SELECT * FROM jogador";
+        $sql = "SELECT * FROM time";
         $resultado = mysqli_query($conexao, $sql);
         desconectar($conexao);
 
@@ -20,18 +20,18 @@
 
     };
 
-    function atualizar($cpf, $nome) {
+    function atualizar($nome, $tipo, $cod_uniforme) {
         $conexao = conectar();
-        $sql = "UPDATE jogador SET nome='$nome' WHERE cpf='$cpf'";
+        $sql = "UPDATE time SET tipo='$tipo', cod_uniforme='$cod_uniforme' WHERE nome='$nome'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
         desconectar($conexao);
 
         return true;
     }
 
-    function excluir($cpf) {
+    function excluir($nome) {
         $conexao = conectar();
-        $sql = "DELETE FROM jogador WHERE cpf='$cpf'";
+        $sql = "DELETE FROM time WHERE nome='$nome'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
         desconectar($conexao);
 

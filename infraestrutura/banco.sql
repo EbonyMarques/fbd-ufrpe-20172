@@ -18,8 +18,8 @@ CREATE TABLE time(
   cod_uniforme CHAR(10));
 
 CREATE TABLE partida(
-  nome_time1 VARCHAR(50) NOT NULL,
-  nome_time2 VARCHAR(50) NOT NULL,
+  nome_time_casa VARCHAR(50) NOT NULL,
+  nome_time_fora VARCHAR(50) NOT NULL,
   placar VARCHAR(10),
   local VARCHAR(20),
   data date,

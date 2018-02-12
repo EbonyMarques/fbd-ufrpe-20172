@@ -1,9 +1,9 @@
 <?php
     require "..\infraestrutura\auxiliar.php";
 
-    function cadastrar($cpf, $nome) {
+    function cadastrar($rg_arbitro, $nome, $tipo_habilitacao) {
         $conexao = conectar();
-        $sql = "INSERT INTO jogador values ('$cpf', '$nome')";
+        $sql = "INSERT INTO arbitro_principal values ('$rg_arbitro', '$nome', '$tipo_habilitacao')";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
         desconectar($conexao);
 
@@ -12,7 +12,7 @@
 
     function ler() {
         $conexao = conectar();
-        $sql = "SELECT * FROM jogador";
+        $sql = "SELECT * FROM arbitro_principal";
         $resultado = mysqli_query($conexao, $sql);
         desconectar($conexao);
 
@@ -20,21 +20,20 @@
 
     };
 
-    function atualizar($cpf, $nome) {
+    function atualizar($rg_arbitro, $nome, $tipo_habilitacao) {
         $conexao = conectar();
-        $sql = "UPDATE jogador SET nome='$nome' WHERE cpf='$cpf'";
+        $sql = "UPDATE arbitro_principal SET nome='$nome', tipo_habilitacao='$tipo_habilitacao' WHERE rg_arbitro='$rg_arbitro'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
         desconectar($conexao);
 
         return true;
     }
 
-    function excluir($cpf) {
+    function excluir($rg_arbitro) {
         $conexao = conectar();
-        $sql = "DELETE FROM jogador WHERE cpf='$cpf'";
+        $sql = "DELETE FROM arbitro_principal WHERE rg_arbitro='$rg_arbitro'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
         desconectar($conexao);
 
         return true;
     };
-

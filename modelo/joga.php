@@ -14,14 +14,14 @@
         $conexao = conectar();
         $sql = "SELECT * FROM joga";
         $resultado = mysqli_query($conexao, $sql);
-        desconectar();
+        desconectar($conexao);
 
         return $resultado;
     };
 
     function atualizar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();
-        $sql = "UPDATE joga SET nome='$nome', posicao='$posicao', data_inicio='$data_inicio', data_fim='$data_fim' WHERE cpf='$cpf_jogador'";
+        $sql = "UPDATE joga SET posicao='$posicao', data_inicio='$data_inicio', data_fim='$data_fim' WHERE cpf_jogador='$cpf_jogador'AND nome='$nome'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
         desconectar($conexao);
 
@@ -30,7 +30,7 @@
 
     function excluir($cpf_jogador) {
         $conexao = conectar();
-        $sql = "DELETE FROM joga WHERE cpf='$cpf_jogador'";
+        $sql = "DELETE FROM joga WHERE cpf_jogador='$cpf_jogador'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
         desconectar($conexao);
 
