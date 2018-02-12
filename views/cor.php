@@ -1,5 +1,5 @@
 <?php
-require "../modelo/cor.php";
+require "../controlador/cor.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +47,7 @@ require "../modelo/cor.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cod_cor"]."</td>
                     <td>".$value["tonalidades_cores"]."</td>

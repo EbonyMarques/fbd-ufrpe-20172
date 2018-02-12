@@ -33,11 +33,11 @@
     </nav>
 
     <div class="container">
-        <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
+        <h3>Novo patrocínio</h3>
+        <form action="/controllerPatrocinio.php">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <label for="cod_patrocinador">Código do patrocinador:</label>
+            <input type="text" class="form-control" id="cod_patrocinador">
           </div>
           <div class="form-group">
             <label for="nome">Nome:</label>

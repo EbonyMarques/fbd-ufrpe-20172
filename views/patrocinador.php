@@ -1,5 +1,5 @@
 <?php
-require "../modelo/patrocinador.php";
+require "../controlador/patrocinador.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,7 +46,7 @@ require "../modelo/patrocinador.php";
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cod_patrocinador"]."</td>
                     <td>".$value["nome_patrocinador"]."</td>

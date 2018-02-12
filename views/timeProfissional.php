@@ -1,5 +1,5 @@
 <?php
-require "../modelo/timeProfissional.php";
+require "../controlador/timeProfissional.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,12 +41,12 @@ require "../modelo/timeProfissional.php";
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Código diretor</th>
+        <th>Código do diretor</th>
       </tr>
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["cod_diretor"]."</td>

@@ -1,5 +1,5 @@
 <?php
-require "../modelo/timeAmador.php";
+require "../controlador/timeAmador.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,13 +41,13 @@ require "../modelo/timeAmador.php";
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Cidade origem</th>
-        <th>Ano criação</th>
+        <th>Cidade de origem</th>
+        <th>Ano de criação</th>
       </tr>
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["cidade_origem"]."</td>

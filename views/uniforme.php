@@ -1,5 +1,5 @@
 <?php
-require "../modelo/uniforme.php";
+require "../controlador/uniforme.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,16 +40,16 @@ require "../modelo/uniforme.php";
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Codigo</th>
-        <th>Descricao</th>
-        <th>Código cor</th>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Código da cor</th>
         <th>Tipo titular reserva</th>
         <th>Nome</th>
       </tr>
     </thead>
     <tbody>
     <?php
-    foreach (ler() as $value) {
+    foreach (exibeDados() as $value) {
         echo "<tr>
                     <td>".$value["cod_uniforme"]."</td>
                     <td>".$value["descricao"]."</td>
