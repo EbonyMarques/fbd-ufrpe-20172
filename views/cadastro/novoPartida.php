@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastrar jogador</title>
+  <title>Cadastrar partida</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -33,15 +33,31 @@
     </nav>
 
     <div class="container">
-        <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
+        <h3>Nova partida</h3>
+        <form action="/controladorPartida.php">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <label for="nome_time_casa">Nome do time da casa:</label>
+            <input type="text" class="form-control" id="nome_time_casa">
           </div>
           <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome">
+              <label for="nome_time_fora">Nome do time de fora:</label>
+              <input type="text" class="form-control" id="nome_time_fora">
+          </div>
+          <div class="form-group">
+            <label for="placar">Placar:</label>
+            <input type="text" class="form-control" id="placar">
+          </div>
+          <div class="form-group">
+              <label for="local">Local:</label>
+              <input type="text" class="form-control" id="local">
+          </div>
+          <div class="form-group">
+              <label for="data">Data:</label>
+              <input type="text" class="form-control" id="data">
+          </div>
+          <div class="form-group">
+              <label for="rg">RG do árbitro:</label>
+              <input type="text" class="form-control" id="rg">
           </div>
           <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

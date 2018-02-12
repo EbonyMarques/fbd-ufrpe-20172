@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastrar jogador</title>
+  <title>Cadastrar cor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -33,15 +33,15 @@
     </nav>
 
     <div class="container">
-        <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
+        <h3>Nova cor</h3>
+        <form action="/controladorCor.php">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <label for="tonalidade">Tonalidade:</label>
+            <input type="text" class="form-control" id="tonalidade">
           </div>
           <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome">
+            <label for="descricao">Descrição:</label>
+            <input type="text" class="form-control" id="descricao">
           </div>
           <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

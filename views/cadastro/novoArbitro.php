@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastrar jogador</title>
+  <title>Cadastrar árbitro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -34,14 +34,18 @@
 
     <div class="container">
         <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
+        <form action="/controladorArbitro.php">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <label for="rg">RG:</label>
+            <input type="text" class="form-control" id="rg">
           </div>
           <div class="form-group">
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome">
+          </div>
+          <div class="form-group">
+              <label for="habilitacao">Tipo de habilitação:</label>
+              <input type="text" class="form-control" id="habilitacao">
           </div>
           <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>

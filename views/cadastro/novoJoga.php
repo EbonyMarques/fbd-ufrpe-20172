@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Cadastrar jogador</title>
+  <title>Cadastrar relação "joga"</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -33,15 +33,27 @@
     </nav>
 
     <div class="container">
-        <h3>Novo jogador</h3>
-        <form action="/controllerJogador.php">
+        <h3>Nova relação "joga"</h3>
+        <form action="/controladorJoga.php">
           <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <label for="cpf_jogador">CPF do jogador:</label>
+            <input type="text" class="form-control" id="cpf_jogador">
           </div>
           <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome">
+            <label for="nome_time">Nome do time:</label>
+            <input type="text" class="form-control" id="nome_time">
+          </div>
+          <div class="form-group">
+              <label for="posicao">Posição do jogador:</label>
+              <input type="text" class="form-control" id="posicao">
+          </div>
+          <div class="form-group">
+              <label for="data_inicio">Data de início:</label>
+              <input type="text" class="form-control" id="data_inicio">
+          </div>
+          <div class="form-group">
+              <label for="data_final">Data final:</label>
+              <input type="text" class="form-control" id="data_final">
           </div>
           <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
