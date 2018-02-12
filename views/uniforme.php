@@ -1,3 +1,6 @@
+<?php
+require "../modelo/uniforme.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,16 +18,16 @@
           <a class="navbar-brand" href="#">FBD</a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html">Início</a></li>
           <li><a href="jogador.php">Jogador</a></li>
           <li><a href="joga.php">Joga</a></li>
           <li><a href="time.php">Time</a></li>
           <li><a href="partida.php">Partida</a></li>
-          <li><a href="arbitroPrincipal.php">Arbitro Principal</a></li>
-          <li><a href="timeAmador.php">Time Amador</a></li>
-          <li><a href="timeProfissional.php">Time Profissional</a></li>
+          <li><a href="arbitroPrincipal.php">Árbitro principal</a></li>
+          <li><a href="timeAmador.php">Time amador</a></li>
+          <li><a href="timeProfissional.php">Time profissional</a></li>
           <li><a href="diretor.php">Diretor</a></li>
-          <li><a href="patrocinio.php">Patrocinio</a></li>
+          <li><a href="patrocinio.php">Patrocínio</a></li>
           <li><a href="patrocinador.php">Patrocinador</a></li>
           <li class="active"><a href="uniforme.php">Uniforme</a></li>
           <li><a href="cor.php">Cor</a></li>
@@ -39,19 +42,23 @@
       <tr>
         <th>Codigo</th>
         <th>Descricao</th>
-        <th>Cod Cor</th>
+        <th>Código cor</th>
         <th>Tipo titular reserva</th>
         <th>Nome</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>23</td>
-        <td>1</td>
-        <td>fasdfasdfa</td>
-      </tr>
+    <?php
+    foreach (ler() as $value) {
+        echo "<tr>
+                    <td>".$value["cod_uniforme"]."</td>
+                    <td>".$value["descricao"]."</td>
+                    <td>".$value["cod_cor"]."</td>
+                    <td>".$value["tipo_titular_reserva"]."</td>
+                    <td>".$value["nome"]."</td>
+              </tr>";
+    }
+    ?>
     </tbody>
   </table>
 </div>

@@ -24,7 +24,7 @@ require "../modelo/time.php";
           <li><a href="joga.php">Joga</a></li>
           <li class="active"><a href="time.php">Time</a></li>
           <li><a href="partida.php">Partida</a></li>
-          <li><a href="arbitroPrincipal.php">Arbitro Principal</a></li>
+          <li><a href="arbitroPrincipal.php">Árbitro Principal</a></li>
           <li><a href="timeAmador.php">Time Amador</a></li>
           <li><a href="timeProfissional.php">Time Profissional</a></li>
           <li><a href="diretor.php">Diretor</a></li>

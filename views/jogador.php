@@ -24,7 +24,7 @@
           <li><a href="joga.php">Joga</a></li>
           <li><a href="time.php">Time</a></li>
           <li><a href="partida.php">Partida</a></li>
-          <li><a href="arbitroPrincipal.php">Arbitro principal</a></li>
+          <li><a href="arbitroPrincipal.php">Árbitro principal</a></li>
           <li><a href="timeAmador.php">Time amador</a></li>
           <li><a href="timeProfissional.php">Time profissional</a></li>
           <li><a href="diretor.php">Diretor</a></li>
