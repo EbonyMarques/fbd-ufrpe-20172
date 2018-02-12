@@ -37,6 +37,7 @@ require "../controlador/patrocinio.php";
 
 <div class="container">
   <h2>Patrocínio</h2>
+  <a href="cadastro/novoPatrocinio.php" class="btn btn-primary" style="float:right;">Novo patrocinio</a>
   <table class="table table-striped">
     <thead>
       <tr>

@@ -37,6 +37,7 @@ require "../controlador/uniforme.php";
 
 <div class="container">
   <h2>Uniforme</h2>
+  <a href="cadastro/novoUniforme.php" class="btn btn-primary" style="float:right;">Novo uniforme</a>
   <table class="table table-striped">
     <thead>
       <tr>

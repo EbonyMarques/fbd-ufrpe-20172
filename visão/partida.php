@@ -38,6 +38,7 @@ require "../controlador/partida.php";
 
 <div class="container">
   <h2>Partida</h2>
+  <a href="cadastro/novaPartida.php" class="btn btn-primary" style="float:right;">Nova partida</a>
   <table class="table table-striped">
     <thead>
       <tr>

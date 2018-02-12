@@ -38,6 +38,7 @@ require "../controlador/arbitroPrincipal.php";
 
 <div class="container">
   <h2>Árbitro principal</h2>
+  <a href="cadastro/novoArbitro.php" class="btn btn-primary" style="float:right;">Novo árbitro</a>
   <table class="table table-striped">
     <thead>
       <tr>

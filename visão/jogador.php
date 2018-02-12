@@ -38,6 +38,7 @@
 
 <div class="container">
   <h2>Jogador</h2>
+  <a href="cadastro/novoJogador.php" class="btn btn-primary" style="float:right;">Novo jogador</a>
   <table class="table table-striped">
     <thead>
       <tr>

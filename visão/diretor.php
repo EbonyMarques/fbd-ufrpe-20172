@@ -37,6 +37,7 @@ require "../controlador/diretor.php";
 
 <div class="container">
   <h2>Diretor</h2>
+  <a href="cadastro/novoDiretor.php" class="btn btn-primary" style="float:right;">Novo diretor</a>
   <table class="table table-striped">
     <thead>
       <tr>

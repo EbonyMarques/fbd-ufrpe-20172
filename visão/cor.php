@@ -37,6 +37,7 @@ require "../controlador/cor.php";
 
 <div class="container">
   <h2>Cor</h2>
+  <a href="cadastro/novaCor.php" class="btn btn-primary" style="float:right;">Nova cor</a>
   <table class="table table-striped">
     <thead>
       <tr>

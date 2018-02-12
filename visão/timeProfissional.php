@@ -37,6 +37,7 @@ require "../controlador/timeProfissional.php";
 
 <div class="container">
   <h2>Time profissional</h2>
+  <a href="cadastro/novoTimeProfissional.php" class="btn btn-primary" style="float:right;">Novo time profissional</a>
   <table class="table table-striped">
     <thead>
       <tr>

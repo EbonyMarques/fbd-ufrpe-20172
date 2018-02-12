@@ -38,6 +38,7 @@ require "../controlador/joga.php";
 
 <div class="container">
   <h2>Joga</h2>
+  <a href="cadastro/novaJoga.php" class="btn btn-primary" style="float:right;">Novo joga</a>
   <table class="table table-striped">
     <thead>
       <tr>

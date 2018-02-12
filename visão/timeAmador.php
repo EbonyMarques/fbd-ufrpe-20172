@@ -37,6 +37,7 @@ require "../controlador/timeAmador.php";
 
 <div class="container">
   <h2>Time amador</h2>
+  <a href="cadastro/novoTimeAmador.php" class="btn btn-primary" style="float:right;">Novo time amador</a>
   <table class="table table-striped">
     <thead>
       <tr>

@@ -38,6 +38,7 @@ require "../controlador/time.php";
 
 <div class="container">
   <h2>Time</h2>
+  <a href="cadastro/novoTime.php" class="btn btn-primary" style="float:right;">Novo time</a>
   <table class="table table-striped">
     <thead>
       <tr>
