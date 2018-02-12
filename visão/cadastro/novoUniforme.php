@@ -34,27 +34,28 @@
 
     <div class="container">
         <h2>Novo uniforme</h2>
-        <form action="/controllerUniforme.php">
+        <form action="/fbd/controlador/uniforme.php" method="post">
             <div class="form-group">
                 <label for="cod_uniforme">Código:</label>
-                <input type="text" class="form-control" id="cod_uniforme">
+                <input type="text" class="form-control" name="cod_uniforme">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <input type="text" class="form-control" id="descricao">
+                <input type="text" class="form-control" name="descricao">
             </div>
             <div class="form-group">
                 <label for="cod_cor">Código da cor:</label>
-                <input type="text" class="form-control" id="cod_cor">
+                <input type="text" class="form-control" name="cod_cor">
             </div>
             <div class="form-group">
                 <label for="tipo_titular_reserva">Tipo titular reserva:</label>
-                <input type="text" class="form-control" id="tipo_titular_reserva">
+                <input type="text" class="form-control" name="tipo_titular_reserva">
             </div>
             <div class="form-group">
                 <label for="cod_cor">Código da cor:</label>
-                <input type="text" class="form-control" id="cod_cor">
+                <input type="text" class="form-control" name="cod_cor">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

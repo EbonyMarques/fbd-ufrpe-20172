@@ -34,19 +34,20 @@
 
     <div class="container">
         <h2>Novo árbitro</h2>
-        <form action="/controladorArbitro.php">
+        <form action="/fbd/controlador/arbitro.php" method="post">
             <div class="form-group">
                 <label for="rg">RG:</label>
-                <input type="text" class="form-control" id="rg">
+                <input type="text" class="form-control" name="rg">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="habilitacao">Tipo de habilitação:</label>
-                <input type="text" class="form-control" id="habilitacao">
+                <input type="text" class="form-control" name="habilitacao">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

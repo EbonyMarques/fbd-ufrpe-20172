@@ -34,15 +34,16 @@
 
     <div class="container">
         <h2>Novo time profissional</h2>
-        <form action="/controllerTimeProfissional.php">
+        <form action="/fbd/controlador/timeProfissional.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="cod_diretor">Código do diretor:</label>
-                <input type="text" class="form-control" id="cod_diretor">
+                <input type="text" class="form-control" name="cod_diretor">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

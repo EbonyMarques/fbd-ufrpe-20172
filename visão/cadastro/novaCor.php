@@ -34,15 +34,16 @@
 
     <div class="container">
         <h2>Nova cor</h2>
-        <form action="/controladorCor.php">
+        <form action="/fbd/controlador/cor.php" method="post">
             <div class="form-group">
                 <label for="tonalidade">Tonalidade:</label>
-                <input type="text" class="form-control" id="tonalidade">
+                <input type="text" class="form-control" name="tonalidade">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <input type="text" class="form-control" id="descricao">
+                <input type="text" class="form-control" name="descricao">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

@@ -34,31 +34,32 @@
 
     <div class="container">
         <h2>Nova partida</h2>
-        <form action="/controladorPartida.php">
+        <form action="/fbd/controlador/partida.php" method="post">
             <div class="form-group">
                 <label for="nome_time_casa">Nome do time da casa:</label>
-                <input type="text" class="form-control" id="nome_time_casa">
+                <input type="text" class="form-control" name="nome_time_casa">
             </div>
             <div class="form-group">
                 <label for="nome_time_fora">Nome do time de fora:</label>
-                <input type="text" class="form-control" id="nome_time_fora">
+                <input type="text" class="form-control" name="nome_time_fora">
             </div>
             <div class="form-group">
                 <label for="placar">Placar:</label>
-                <input type="text" class="form-control" id="placar">
+                <input type="text" class="form-control" name="placar">
             </div>
             <div class="form-group">
                 <label for="local">Local:</label>
-                <input type="text" class="form-control" id="local">
+                <input type="text" class="form-control" name="local">
             </div>
             <div class="form-group">
                 <label for="data">Data:</label>
-                <input type="text" class="form-control" id="data">
+                <input type="text" class="form-control" name="data">
             </div>
             <div class="form-group">
                 <label for="rg">RG do árbitro:</label>
-                <input type="text" class="form-control" id="rg">
+                <input type="text" class="form-control" name="rg">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

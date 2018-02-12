@@ -34,19 +34,20 @@
 
     <div class="container">
         <h2>Novo time</h2>
-        <form action="/controllerTime.php">
+        <form action="/fbd/controlador/time.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo:</label>
-                <input type="text" class="form-control" id="tipo">
+                <input type="text" class="form-control" name="tipo">
             </div>
             <div class="form-group">
                 <label for="cod_uniforme">Código do uniforme:</label>
-                <input type="text" class="form-control" id="cod_uniforme">
+                <input type="text" class="form-control" name="cod_uniforme">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

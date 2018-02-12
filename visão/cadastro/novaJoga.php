@@ -34,27 +34,28 @@
 
     <div class="container">
         <h2>Nova relação "joga"</h2>
-        <form action="/controladorJoga.php">
+        <form action="/fbd/controlador/joga.php" method="post">
             <div class="form-group">
                 <label for="cpf_jogador">CPF do jogador:</label>
-                <input type="text" class="form-control" id="cpf_jogador">
+                <input type="text" class="form-control" name="cpf_jogador">
             </div>
             <div class="form-group">
                 <label for="nome_time">Nome do time:</label>
-                <input type="text" class="form-control" id="nome_time">
+                <input type="text" class="form-control" name="nome_time">
             </div>
             <div class="form-group">
                 <label for="posicao">Posição do jogador:</label>
-                <input type="text" class="form-control" id="posicao">
+                <input type="text" class="form-control" name="posicao">
             </div>
             <div class="form-group">
                 <label for="data_inicio">Data de início:</label>
-                <input type="text" class="form-control" id="data_inicio">
+                <input type="text" class="form-control" name="data_inicio">
             </div>
             <div class="form-group">
                 <label for="data_final">Data final:</label>
-                <input type="text" class="form-control" id="data_final">
+                <input type="text" class="form-control" name="data_final">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

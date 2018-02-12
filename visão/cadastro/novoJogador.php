@@ -34,15 +34,16 @@
 
     <div class="container">
         <h2>Novo jogador</h2>
-        <form action="/controllerJogador.php">
+        <form action="/fbd/controlador/jogador.php" method="post">
             <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" id="cpf">
+                <input type="text" class="form-control" name="cpf">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" name="nome">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>

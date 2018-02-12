@@ -34,15 +34,16 @@
 
     <div class="container">
         <h2>Novo diretor</h2>
-        <form action="/controladorDiretor.php">
+        <form action="/fbd/controlador/diretor.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome">
+                <input type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="sobrenome">Sobrenome:</label>
-                <input type="text" class="form-control" id="sobrenome">
+                <input type="text" class="form-control" name="sobrenome">
             </div>
+            <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
     </div>
