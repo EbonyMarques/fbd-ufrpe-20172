@@ -6,12 +6,12 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'nome_time_casa' => $_POST('nome_time_casa'),
-                    'nome_time_fora' => $_POST('nome_time_fora'),
-                    'placar' => $_POST('placar'),
-                    'local' => $_POST('local'),
-                    'data' => $_POST('data'),
-                    'rg' => $_POST('rg')
+                    'nome_time_casa' => $_POST['nome_time_casa'],
+                    'nome_time_fora' => $_POST['nome_time_fora'],
+                    'placar' => $_POST['placar'],
+                    'local' => $_POST['local'],
+                    'data' => $_POST['data'],
+                    'rg' => $_POST['rg']
                 );
                 novo($dados);
             }
@@ -36,10 +36,16 @@
         }
     }
     function novo($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['nome_time_casa'],$value['nome_time_fora'],$value['placar'],$value['local'],$value['data'],$value['rg']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = atualizar($value['nome_time_casa'],$value['nome_time_fora'],$value['placar'],$value['local'],$value['data'],$value['rg']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...

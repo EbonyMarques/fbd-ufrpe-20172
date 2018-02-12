@@ -36,6 +36,10 @@
         <h2>Nova cor</h2>
         <form action="/fbd/controlador/cor.php" method="post">
             <div class="form-group">
+                <label for="cod_cor">Cor:</label>
+                <input type="text" class="form-control" name="cod_cor">
+            </div>
+            <div class="form-group">
                 <label for="tonalidade">Tonalidade:</label>
                 <input type="text" class="form-control" name="tonalidade">
             </div>

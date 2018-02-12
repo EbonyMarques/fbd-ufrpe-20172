@@ -6,8 +6,8 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cpf' => $_POST('cpf'),
-                    'nome' => $_POST('nome')
+                    'cpf' => $_POST['cpf'],
+                    'nome' => $_POST['nome']
                 );
                 novo($dados);
             }
@@ -32,10 +32,16 @@
         }
     }
     function novo($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['cpf'],$value['nome']);
+        if($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = atualizar($value['cpf'],$value['nome']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...

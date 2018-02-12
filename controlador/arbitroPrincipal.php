@@ -6,9 +6,9 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'rg' => $_POST('rg'),
-                    'nome' => $_POST('nome'),
-                    'habilitacao' => $_POST('habilitacao')
+                    'rg' => $_POST['rg'],
+                    'nome' => $_POST['nome'],
+                    'habilitacao' => $_POST['habilitacao']
                 );
                 novo($dados);
             }
@@ -16,10 +16,10 @@
                 echo "erro";
             }
         }
-        if ($_POST["acao"]=="alterar"){
+        elseif ($_POST["acao"]=="alterar"){
             alterar('');
         }
-        if ($_POST["acao"]=="excluir"){
+        elseif ($_POST["acao"]=="excluir"){
             excluir('');
         }
     }
@@ -33,10 +33,16 @@
         }
     }
     function novo($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['rg'],$value['nome'],$value['habilitacao']);
+        if($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = atualizar($value['rg'],$value['nome'],$value['habilitacao']);
+        if($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...

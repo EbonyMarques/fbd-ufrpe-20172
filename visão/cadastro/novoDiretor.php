@@ -36,6 +36,10 @@
         <h2>Novo diretor</h2>
         <form action="/fbd/controlador/diretor.php" method="post">
             <div class="form-group">
+                <label for="cod_diretor">Código do diretor:</label>
+                <input type="text" class="form-control" name="cod_diretor">
+            </div>
+            <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" name="nome">
             </div>

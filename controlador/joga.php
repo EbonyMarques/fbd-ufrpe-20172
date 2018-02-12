@@ -6,11 +6,11 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'cpf_jogador' => $_POST('cpf_jogador'),
-                    'nome_time' => $_POST('nome_time'),
-                    'posicao' => $_POST('posicao'),
-                    'data_inicio' => $_POST('data_inicio'),
-                    'data_final' => $_POST('data_final')
+                    'cpf_jogador' => $_POST['cpf_jogador'],
+                    'nome_time' => $_POST['nome_time'],
+                    'posicao' => $_POST['posicao'],
+                    'data_inicio' => $_POST['data_inicio'],
+                    'data_final' => $_POST['data_final']
                 );
                 novo($dados);
             }
@@ -35,10 +35,16 @@
         }
     }
     function novo($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['cpf_jogador'],$value['nome_time'],$value['posicao'],$value['data_inicio'],$value['data_final']);
+        if($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = atualizar($value['cpf_jogador'],$value['nome_time'],$value['posicao'],$value['data_inicio'],$value['data_final']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...

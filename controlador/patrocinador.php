@@ -6,7 +6,8 @@
             $permitir = true;
             if ($permitir) {
                 $dados = array(
-                    'nome' => $_POST('nome')
+                    'cod_patrocinador' => $_POST['cod_patrocinador'],
+                    'nome' => $_POST['nome']
                 );
                 novo($dados);
             }
@@ -31,10 +32,16 @@
         }
     }
     function novo($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['cod_patrocinador'],$value['nome']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function alterar($value) {
-        # pega os dados do form e manda pro modelo...
+        $permissao = cadastrar($value['cod_patrocinador'],$value['nome']);
+        if ($permissao){
+            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+        }
     }
     function excluirPorId($value) {
         # pega os dados do form e manda pro modelo...
