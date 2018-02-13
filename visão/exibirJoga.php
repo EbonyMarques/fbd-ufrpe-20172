@@ -89,10 +89,12 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
         <p>Você tem certeza que deseja excluir este registro do banco de dados?</p>
       </div>
       <div class="modal-footer">
-        <form action="/fbd/controlador/arbitroPrincipal.php" method="post">
-            <input type="hidden" class="form-control" name="nome">
-            <input type="hidden" class="form-control" name="nome">
-            <input type="hidden" value="excluir" name="acao" />
+        <form action="/fbd/controlador/joga.php" method="post">
+            <div id="inputs">
+                <input type="hidden" class="form-control" name="cpf_jogador">
+                <input type="hidden" class="form-control" name="nome">
+                <input type="hidden" value="excluir" name="acao" />
+            </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
