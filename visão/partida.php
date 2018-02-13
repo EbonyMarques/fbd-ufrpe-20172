@@ -9,6 +9,7 @@ require "../controlador/partida.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -39,7 +40,7 @@ require "../controlador/partida.php";
 <div class="container">
   <h2>Partida</h2>
   <a href="cadastro/novaPartida.php" class="btn btn-primary" style="float:right;">Nova partida</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Time da casa</th>
@@ -48,6 +49,7 @@ require "../controlador/partida.php";
         <th>Local</th>
         <th>Data</th>
         <th>RG do árbitro</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -60,6 +62,16 @@ require "../controlador/partida.php";
                     <td>".$value["local"]."</td>
                     <td>".$value["data"]."</td>
                     <td>".$value["rg_arbitro"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novaPartida.php?".$value["nome_time_casa"]."&".$value["nome_time_fora"]."'>Editar</a></li>
+                            <li><a href='cadastro/novaPartida.php?".$value["nome_time_casa"]."&".$value["nome_time_fora"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

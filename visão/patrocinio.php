@@ -8,6 +8,7 @@ require "../controlador/patrocinio.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -38,11 +39,12 @@ require "../controlador/patrocinio.php";
 <div class="container">
   <h2>Patrocínio</h2>
   <a href="cadastro/novoPatrocinio.php" class="btn btn-primary" style="float:right;">Novo patrocinio</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Código do patrocinador</th>
         <th>Nome do time</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -51,6 +53,16 @@ require "../controlador/patrocinio.php";
         echo "<tr>
                     <td>".$value["cod_patrocinador"]."</td>
                     <td>".$value["nome"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoPatrocinio.php?".$value["cod_patrocinador"]."&".$value["nome"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoPatrocinio.php?".$value["cod_patrocinador"]."&".$value["nome"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

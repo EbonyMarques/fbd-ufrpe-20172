@@ -9,6 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -39,11 +40,12 @@
 <div class="container">
   <h2>Jogador</h2>
   <a href="cadastro/novoJogador.php" class="btn btn-primary" style="float:right;">Novo jogador</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>CPF</th>
         <th>Nome</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -52,6 +54,16 @@
             echo "<tr>
                     <td>".$value["cpf"]."</td>
                     <td>".$value["nome"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoJogador.php?".$value["cpf"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoJogador.php?".$value["cpf"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
                   </tr>";
         }
     ?>

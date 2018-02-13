@@ -8,6 +8,7 @@ require "../controlador/timeAmador.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -38,12 +39,13 @@ require "../controlador/timeAmador.php";
 <div class="container">
   <h2>Time amador</h2>
   <a href="cadastro/novoTimeAmador.php" class="btn btn-primary" style="float:right;">Novo time amador</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Nome</th>
         <th>Cidade de origem</th>
         <th>Ano de criação</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +55,16 @@ require "../controlador/timeAmador.php";
                     <td>".$value["nome"]."</td>
                     <td>".$value["cidade_origem"]."</td>
                     <td>".$value["ano_criacao"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoTimeAmador.php?".$value["nome"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoTimeAmador.php?".$value["nome"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

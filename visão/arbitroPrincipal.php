@@ -9,6 +9,7 @@ require "../controlador/arbitroPrincipal.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -39,12 +40,13 @@ require "../controlador/arbitroPrincipal.php";
 <div class="container">
   <h2>Árbitro principal</h2>
   <a href="cadastro/novoArbitro.php" class="btn btn-primary" style="float:right;">Novo árbitro</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>RG</th>
         <th>Nome</th>
         <th>Tipo de habilitação</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -54,6 +56,16 @@ require "../controlador/arbitroPrincipal.php";
                     <td>".$value["rg_arbitro"]."</td>
                     <td>".$value["nome"]."</td>
                     <td>".$value["tipo_habilitacao"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoArbitro.php?".$value["rg_arbitro"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoArbitro.php?".$value["rg_arbitro"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

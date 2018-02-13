@@ -9,6 +9,7 @@ require "../controlador/joga.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -39,7 +40,7 @@ require "../controlador/joga.php";
 <div class="container">
   <h2>Joga</h2>
   <a href="cadastro/novaJoga.php" class="btn btn-primary" style="float:right;">Novo joga</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>CPF</th>
@@ -47,6 +48,7 @@ require "../controlador/joga.php";
         <th>Posição</th>
         <th>Data inicial</th>
         <th>Data final</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -58,6 +60,16 @@ require "../controlador/joga.php";
                     <td>".$value["posicao"]."</td>
                     <td>".$value["data_inicio"]."</td>
                     <td>".$value["data_fim"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novaJoga.php?".$value["cpf_jogador"]."&".$value["nome"]."'>Editar</a></li>
+                            <li><a href='cadastro/novaJoga.php?".$value["cpf_jogador"]."&".$value["nome"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

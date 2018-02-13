@@ -8,6 +8,7 @@ require "../controlador/timeProfissional.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -38,11 +39,12 @@ require "../controlador/timeProfissional.php";
 <div class="container">
   <h2>Time profissional</h2>
   <a href="cadastro/novoTimeProfissional.php" class="btn btn-primary" style="float:right;">Novo time profissional</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Nome</th>
         <th>Código do diretor</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -51,6 +53,16 @@ require "../controlador/timeProfissional.php";
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["cod_diretor"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoTimeProfissional.php?".$value["nome"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoTimeProfissional.php?".$value["nome"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

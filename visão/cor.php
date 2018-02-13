@@ -8,6 +8,7 @@ require "../controlador/cor.php";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -38,12 +39,13 @@ require "../controlador/cor.php";
 <div class="container">
   <h2>Cor</h2>
   <a href="cadastro/novaCor.php" class="btn btn-primary" style="float:right;">Nova cor</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Código da cor</th>
         <th>Tonalidade</th>
         <th>Descrição</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +55,16 @@ require "../controlador/cor.php";
                     <td>".$value["cod_cor"]."</td>
                     <td>".$value["tonalidades_cores"]."</td>
                     <td>".$value["descricao"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novaCor.php?".$value["cod_cor"]."'>Editar</a></li>
+                            <li><a href='cadastro/novaCor.php?".$value["cod_cor"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>

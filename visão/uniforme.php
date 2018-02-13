@@ -7,6 +7,7 @@ require "../controlador/uniforme.php";
   <title>FBD</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
@@ -38,7 +39,7 @@ require "../controlador/uniforme.php";
 <div class="container">
   <h2>Uniforme</h2>
   <a href="cadastro/novoUniforme.php" class="btn btn-primary" style="float:right;">Novo uniforme</a>
-  <table class="table table-striped">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Código do uniforme</th>
@@ -46,7 +47,7 @@ require "../controlador/uniforme.php";
         <th>Nome</th>
         <th>Descrição</th>
         <th>Tipo</th>
-
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -58,6 +59,16 @@ require "../controlador/uniforme.php";
                     <td>".$value["nome"]."</td>
                     <td>".$value["descricao"]."</td>
                     <td>".$value["tipo_titular_reserva"]."</td>
+                    <td>
+                        <div class='dropdown'>
+                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                          <ul class='dropdown-menu'>
+                            <li><a href='cadastro/novoUniforme.php?".$value["cod_uniforme"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoUniforme.php?".$value["cod_uniforme"]."'>Excluir</a></li>
+                          </ul>
+                        </div>
+                    </td>
               </tr>";
     }
     ?>
