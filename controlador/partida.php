@@ -26,6 +26,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -45,6 +46,7 @@
 
     function cadastro($valor) {
         $permissao = cadastrar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
+
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
         }
@@ -52,6 +54,7 @@
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
+
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
         }

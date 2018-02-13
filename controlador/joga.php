@@ -9,12 +9,15 @@
             "data_inicio" => $_POST["data_inicio"],
             "data_final" => $_POST["data_final"]
         );
+
         if ($_POST["acao"]=="cadastrar"){
             cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -22,6 +25,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -42,16 +46,20 @@
 
     function cadastro($valor) {
         $permissao = cadastrar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
+
         if($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
         }
     }
+
     function atualizacao($valor) {
         $permissao = atualizar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
+
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
         }
     }
+
     function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }

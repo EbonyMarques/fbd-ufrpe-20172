@@ -6,15 +6,11 @@
             "cod_patrocinador" => $_POST["cod_patrocinador"],
             "nome" => $_POST["nome"]
         );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de patrocínio!";
-            }
+            cadastro($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao($dados);
         }
@@ -22,6 +18,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {

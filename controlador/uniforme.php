@@ -9,18 +9,15 @@
             "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
             "nome" => $_POST["nome"]
         );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro!1";
-            }
+            cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -28,6 +25,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -53,6 +51,7 @@
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
         }
     }
+
     function atualizacao($valor) {
         $resultado = atualizar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 
@@ -60,6 +59,7 @@
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
         }
     }
+
     function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }

@@ -11,9 +11,11 @@
         if ($_POST["acao"]=="cadastrar"){
             cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -21,6 +23,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -40,6 +43,7 @@
 
     function cadastro($valor) {
         $permissao = cadastrar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
+
         if($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }
@@ -47,6 +51,7 @@
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
+
         if($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }

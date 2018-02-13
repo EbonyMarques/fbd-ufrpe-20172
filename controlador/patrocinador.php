@@ -10,6 +10,7 @@
         if ($_POST["acao"]=="cadastrar"){
             cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
@@ -21,6 +22,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -40,12 +42,14 @@
 
     function cadastro($valor) {
         $permissao = cadastrar($valor['cod_patrocinador'],$valor['nome']);
+
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinador.php'>";
         }
     }
     function atualizacao($valor) {
         $permissao = atualizar($valor['cod_patrocinador'],$valor['nome']);
+        
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinador.php'>";
         }

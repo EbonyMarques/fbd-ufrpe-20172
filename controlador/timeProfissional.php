@@ -6,18 +6,15 @@
             'nome' => $_POST['nome'],
             'cod_diretor' => $_POST['cod_diretor']
         );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de time profissional!";
-            }
+            cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -25,6 +22,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {

@@ -7,18 +7,15 @@
             "cidade_origem" => $_POST["cidade_origem"],
             "ano_criacao" => $_POST["ano_criacao"]
         );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de time amador!";
-            }
+            cadastro($dados);
         }
+
         if ($_POST["acao"]=="atualizar"){
             atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -26,6 +23,7 @@
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
@@ -42,6 +40,7 @@
         }
 
     }
+
     function cadastro($valor) {
         $resultado = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
@@ -49,6 +48,7 @@
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
         }
     }
+
     function atualizacao($valor) {
         $resultado = atualizar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
@@ -56,6 +56,7 @@
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
         }
     }
+
     function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }

@@ -2,25 +2,16 @@
     require "../modelo/jogador.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cpf" => $_POST["cpf"],
+            "nome" => $_POST["nome"]
+        );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "cpf" => $_POST["cpf"],
-                    "nome" => $_POST["nome"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de jogador!";
-            }
+            cadastro($dados);
         }
 
         if ($_POST["acao"]=="atualizar"){
-            $dados = array(
-                "cpf" => $_POST["cpf"],
-                "nome" => $_POST["nome"]
-            );
             atualizacao($dados);
         }
 
@@ -69,5 +60,4 @@
     function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
-
 ?>
