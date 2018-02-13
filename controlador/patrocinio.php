@@ -2,17 +2,20 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/patrocinio.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cod_patrocinador" => $_POST["cod_patrocinador"],
-            "nome" => $_POST["nome"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
+            $dados = array(
+                "cod_patrocinador" => $_POST["cod_patrocinador"]
+            );
             exclusao($dados);
+        } else {
+            $dados = array(
+                "cod_patrocinador" => $_POST["cod_patrocinador"],
+                "nome" => $_POST["nome"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
         }
     }
 

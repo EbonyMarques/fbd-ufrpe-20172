@@ -2,21 +2,24 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/time.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "nome" => $_POST["nome"],
-            "tipo" => $_POST["tipo"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "nome" => $_POST["nome"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "nome" => $_POST["nome"],
+                "tipo" => $_POST["tipo"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

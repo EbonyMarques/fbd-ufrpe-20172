@@ -2,24 +2,28 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/joga.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cpf_jogador" => $_POST["cpf_jogador"],
-            "nome_time" => $_POST["nome_time"],
-            "posicao" => $_POST["posicao"],
-            "data_inicio" => $_POST["data_inicio"],
-            "data_final" => $_POST["data_final"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "cpf_jogador" => $_POST["cpf_jogador"],
+                "nome_time" => $_POST["nome_time"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "cpf_jogador" => $_POST["cpf_jogador"],
+                "nome_time" => $_POST["nome_time"],
+                "posicao" => $_POST["posicao"],
+                "data_inicio" => $_POST["data_inicio"],
+                "data_final" => $_POST["data_final"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

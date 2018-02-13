@@ -2,24 +2,27 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/uniforme.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cod_uniforme" => $_POST["cod_uniforme"],
-            "descricao" => $_POST["descricao"],
-            "cod_cor" => $_POST["cod_cor"],
-            "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
-            "nome" => $_POST["nome"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "cod_uniforme" => $_POST["cod_uniforme"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "cod_uniforme" => $_POST["cod_uniforme"],
+                "descricao" => $_POST["descricao"],
+                "cod_cor" => $_POST["cod_cor"],
+                "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
+                "nome" => $_POST["nome"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

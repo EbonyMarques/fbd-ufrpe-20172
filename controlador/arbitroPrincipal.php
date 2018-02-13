@@ -2,21 +2,24 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/arbitroPrincipal.php";
 
     if(isset($_POST["acao"])) {
-        $dados = array(
-            "rg" => $_POST["rg"],
-            "nome" => $_POST["nome"],
-            "habilitacao" => $_POST["tipo_habilitacao"]);
+        if ($_POST["acao"]=="excluir"){
+            $dados = array(
+                "rg" => $_POST["rg"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "rg" => $_POST["rg"],
+                "nome" => $_POST["nome"],
+                "habilitacao" => $_POST["tipo_habilitacao"]);
 
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
 
-        elseif ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
-        elseif ($_POST["acao"]=="excluir"){
-            exclusao('');
+            elseif ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

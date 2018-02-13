@@ -2,22 +2,25 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/cor.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cod_cor" => $_POST["cod_cor"],
-            "tonalidade" => $_POST["tonalidade"],
-            "descricao" => $_POST["descricao"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "cod_cor" => $_POST["cod_cor"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "cod_cor" => $_POST["cod_cor"],
+                "tonalidade" => $_POST["tonalidade"],
+                "descricao" => $_POST["descricao"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

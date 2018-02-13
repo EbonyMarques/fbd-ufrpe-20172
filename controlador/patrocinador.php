@@ -2,21 +2,24 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/patrocinador.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cod_patrocinador" => $_POST["cod_patrocinador"],
-            "nome" => $_POST["nome"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "cod_patrocinador" => $_POST["cod_patrocinador"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "cod_patrocinador" => $_POST["cod_patrocinador"],
+                "nome" => $_POST["nome"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 
@@ -49,7 +52,7 @@
     }
     function atualizacao($valor) {
         $permissao = atualizar($valor['cod_patrocinador'],$valor['nome']);
-        
+
         if ($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinador.php'>";
         }

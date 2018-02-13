@@ -2,22 +2,25 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/diretor.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "cod_diretor" => $_POST["cod_diretor"],
-            "nome" => $_POST["nome"],
-            "sobrenome" => $_POST["sobrenome"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "cod_diretor" => $_POST["cod_diretor"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "cod_diretor" => $_POST["cod_diretor"],
+                "nome" => $_POST["nome"],
+                "sobrenome" => $_POST["sobrenome"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

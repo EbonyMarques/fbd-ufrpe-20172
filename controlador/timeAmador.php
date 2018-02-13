@@ -2,22 +2,25 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/timeAmador.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "nome" => $_POST["nome"],
-            "cidade_origem" => $_POST["cidade_origem"],
-            "ano_criacao" => $_POST["ano_criacao"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar"){
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "nome" => $_POST["nome"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "nome" => $_POST["nome"],
+                "cidade_origem" => $_POST["cidade_origem"],
+                "ano_criacao" => $_POST["ano_criacao"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar"){
+                atualizacao($dados);
+            }
         }
     }
 

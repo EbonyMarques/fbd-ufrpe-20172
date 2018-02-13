@@ -2,25 +2,29 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/partida.php";
 
     if(isset($_POST['acao'])) {
-        $dados = array(
-            "nome_time_casa" => $_POST["nome_time_casa"],
-            "nome_time_fora" => $_POST["nome_time_fora"],
-            "placar" => $_POST["placar"],
-            "local" => $_POST["local"],
-            "data" => $_POST["data"],
-            "rg" => $_POST["rg"]
-        );
-
-        if ($_POST["acao"]=="cadastrar"){
-            cadastro($dados);
-        }
-
-        if ($_POST["acao"]=="atualizar") {
-            atualizacao($dados);
-        }
-
         if ($_POST["acao"]=="excluir"){
-            exclusao('');
+            $dados = array(
+                "nome_time_casa" => $_POST["nome_time_casa"],
+                "nome_time_fora" => $_POST["nome_time_fora"]
+            );
+            exclusao($dados);
+        } else {
+            $dados = array(
+                "nome_time_casa" => $_POST["nome_time_casa"],
+                "nome_time_fora" => $_POST["nome_time_fora"],
+                "placar" => $_POST["placar"],
+                "local" => $_POST["local"],
+                "data" => $_POST["data"],
+                "rg" => $_POST["rg"]
+            );
+
+            if ($_POST["acao"]=="cadastrar"){
+                cadastro($dados);
+            }
+
+            if ($_POST["acao"]=="atualizar") {
+                atualizacao($dados);
+            }
         }
     }
 

@@ -11,6 +11,7 @@ require "../controlador/timeAmador.php";
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -60,8 +61,8 @@ require "../controlador/timeAmador.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizar/atualizarTimeAmador.php?".$value["nome"]."'>Editar</a></li>
-                            <li><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
+                            <li id='dados'><a href='atualizar/atualizarTimeAmador.php?".$value["nome"]."'>Editar</a></li>
+                            <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>
                     </td>
