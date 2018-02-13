@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -39,8 +40,8 @@
     </nav>
 
 <div class="container">
-  <h2>Jogador</h2>
-  <a href="cadastro/novoJogador.php" class="btn btn-primary" style="float:right;">Novo jogador</a>
+    <a href="cadastro/novoJogador.php" class="btn btn-primary add-button">Novo jogador</a>
+  <h2 class="header">Jogador</h2>
   <table class="table table-hover">
     <thead>
       <tr>

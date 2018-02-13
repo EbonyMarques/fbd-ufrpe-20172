@@ -1,1 +1,21 @@
-/* CSS */
+.dropdown .btn {
+    background-color: transparent;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+}
+td {
+    line-height: 3!important;
+    padding: 8px 4px!important;
+}
+.dropdown-menu {
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.add-button {
+    float: right;
+    margin-top: 1em;
+}
+h2.header {
+    margin-bottom: 1em;
+}

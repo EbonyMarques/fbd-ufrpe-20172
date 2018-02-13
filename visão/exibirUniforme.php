@@ -9,6 +9,7 @@ require "../controlador/uniforme.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -38,8 +39,8 @@ require "../controlador/uniforme.php";
     </nav>
 
 <div class="container">
-  <h2>Uniforme</h2>
-  <a href="cadastro/novoUniforme.php" class="btn btn-primary" style="float:right;">Novo uniforme</a>
+    <a href="cadastro/novoUniforme.php" class="btn btn-primary add-button">Novo uniforme</a>
+  <h2 class="header">Uniforme</h2>
   <table class="table table-hover">
     <thead>
       <tr>

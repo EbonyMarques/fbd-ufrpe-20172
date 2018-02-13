@@ -9,6 +9,7 @@ require "../controlador/patrocinio.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -38,8 +39,8 @@ require "../controlador/patrocinio.php";
     </nav>
 
 <div class="container">
-  <h2>Patrocínio</h2>
-  <a href="cadastro/novoPatrocinio.php" class="btn btn-primary" style="float:right;">Novo patrocinio</a>
+    <a href="cadastro/novoPatrocinio.php" class="btn btn-primary add-button">Novo patrocinio</a>
+  <h2 class="header">Patrocínio</h2>
   <table class="table table-hover">
     <thead>
       <tr>

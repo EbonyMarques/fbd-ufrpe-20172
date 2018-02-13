@@ -9,6 +9,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/patrocinador.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -38,8 +39,8 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/patrocinador.php";
     </nav>
 
 <div class="container">
-  <h2>Patrocinador</h2>
-  <a href="cadastro/novoPatrocinador.php" class="btn btn-primary" style="float:right;">Novo patrocinador</a>
+    <a href="cadastro/novoPatrocinador.php" class="btn btn-primary add-button">Novo patrocinador</a>
+  <h2 class="header">Patrocinador</h2>
   <table class="table table-hover">
     <thead>
       <tr>

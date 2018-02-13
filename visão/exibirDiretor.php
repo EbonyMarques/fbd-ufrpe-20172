@@ -9,6 +9,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/diretor.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -37,8 +38,8 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/diretor.php";
     </nav>
 
 <div class="container">
-  <h2>Diretor</h2>
-  <a href="cadastro/novoDiretor.php" class="btn btn-primary" style="float:right;">Novo diretor</a>
+    <a href="cadastro/novoDiretor.php" class="btn btn-primary add-button">Novo diretor</a>
+  <h2 class="header">Diretor</h2>
   <table class="table table-hover">
     <thead>
       <tr>

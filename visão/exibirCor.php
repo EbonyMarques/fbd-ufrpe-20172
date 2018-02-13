@@ -9,6 +9,7 @@ require "../controlador/cor.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -38,8 +39,8 @@ require "../controlador/cor.php";
     </nav>
 
 <div class="container">
-  <h2>Cor</h2>
-  <a href="cadastro/novaCor.php" class="btn btn-primary" style="float:right;">Nova cor</a>
+  <a href="cadastro/novaCor.php" class="btn btn-primary add-button">Nova cor</a>
+  <h2 class="header">Cor</h2>
   <table class="table table-hover">
     <thead>
       <tr>

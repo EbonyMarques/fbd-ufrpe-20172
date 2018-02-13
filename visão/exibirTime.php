@@ -10,6 +10,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -39,8 +40,8 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
     </nav>
 
 <div class="container">
-  <h2>Time</h2>
-  <a href="cadastro/novoTime.php" class="btn btn-primary" style="float:right;">Novo time</a>
+    <a href="cadastro/novoTime.php" class="btn btn-primary add-button">Novo time</a>
+  <h2 class="header">Time</h2>
   <table class="table table-hover">
     <thead>
       <tr>
