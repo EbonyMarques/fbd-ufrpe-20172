@@ -65,7 +65,11 @@
     }
 
     function exclusao($valor) {
-        # pega os dados do form e manda pro modelo...
+        $resultado = excluir($valor["cod_uniforme"]);
+
+        if ($resultado) {
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+        }
     }
 
 ?>
