@@ -2,20 +2,15 @@
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/patrocinio.php";
 
     if(isset($_POST['acao'])) {
-        if ($_POST["acao"]=="excluir"){
-            $dados = array(
-                "cod_patrocinador" => $_POST["cod_patrocinador"]
-            );
+        $dados = array(
+            "cod_patrocinador" => $_POST["cod_patrocinador"],
+            "nome" => $_POST["nome"]
+        );
+        if ($_POST["acao"]=="excluir") {
             exclusao($dados);
-        } else {
-            $dados = array(
-                "cod_patrocinador" => $_POST["cod_patrocinador"],
-                "nome" => $_POST["nome"]
-            );
-
-            if ($_POST["acao"]=="cadastrar"){
+        }
+        if ($_POST["acao"]=="cadastrar"){
                 cadastro($dados);
-            }
         }
     }
 
@@ -36,7 +31,7 @@
         }
     }
     function exclusao($valor) {
-        $resultado = excluir($valor["cod_uniforme"]);
+        $resultado = excluir($valor["cod_patrocinador"], $valor["nome"]);
 
         if ($resultado) {
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";

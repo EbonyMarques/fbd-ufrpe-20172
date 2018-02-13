@@ -43,9 +43,9 @@
         return true;
     }
 
-    function excluir($cpf_jogador) {
+    function excluir($cpf_jogador,$nome) {
         $conexao = conectar();
-        $sql = "DELETE FROM joga WHERE cpf_jogador='$cpf_jogador'";
+        $sql = "DELETE FROM joga WHERE cpf_jogador='$cpf_jogador' AND nome='$nome' ";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
         desconectar($conexao);
 

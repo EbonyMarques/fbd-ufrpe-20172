@@ -61,7 +61,7 @@
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["cod_uniforme"]);
+        $resultado = excluir($valor["cpf"]);
 
         if ($resultado) {
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
