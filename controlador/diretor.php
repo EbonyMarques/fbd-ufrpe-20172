@@ -64,7 +64,7 @@
         $resultado = excluir($valor["cod_diretor"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
         }
     }
 

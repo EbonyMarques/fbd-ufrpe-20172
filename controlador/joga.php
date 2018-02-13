@@ -68,7 +68,7 @@
         $resultado = excluir($valor["cpf_jogador"],$valor["nome_time"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
         }
     }
 

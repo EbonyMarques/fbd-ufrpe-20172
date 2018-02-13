@@ -34,7 +34,7 @@
         $resultado = excluir($valor["cod_patrocinador"], $valor["nome"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinio.php'>";
         }
     }
 

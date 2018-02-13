@@ -64,7 +64,7 @@
         $resultado = excluir($valor["cpf"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
         }
     }
 ?>

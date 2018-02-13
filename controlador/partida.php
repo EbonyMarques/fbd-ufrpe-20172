@@ -68,7 +68,7 @@
         $resultado = excluir($valor["nome_time_casa"], $valor["nome_time_fora"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
         }
     }
 
