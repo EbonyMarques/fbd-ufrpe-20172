@@ -66,7 +66,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
                             <li><a href='atualizar/atualizarJoga.php?".$value["cpf_jogador"]."?".$value["nome"]."'>Editar</a></li>
-                            <li><a href='cadastro/novaJoga.php?".$value["cpf_jogador"]."?".$value["nome"]."'>Excluir</a></li>
+                            <li><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>
                     </td>
@@ -76,6 +76,31 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
     </tbody>
   </table>
 </div>
+
+<!-- Modal -->
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><b>Excluir registro</b></h4>
+      </div>
+      <div class="modal-body">
+        <p>Você tem certeza que deseja excluir este registro do banco de dados?</p>
+      </div>
+      <div class="modal-footer">
+        <form action="/fbd/controlador/arbitroPrincipal.php" method="post">
+            <input type="hidden" class="form-control" name="nome">
+            <input type="hidden" class="form-control" name="nome">
+            <input type="hidden" value="excluir" name="acao" />
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fimModal -->
 
 </body>
 </html>
