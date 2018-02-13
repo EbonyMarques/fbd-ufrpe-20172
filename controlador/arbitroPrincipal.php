@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/arbitroPrincipal.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/arbitroPrincipal.php";
 
     if(isset($_POST["acao"])) {
         $dados = array(

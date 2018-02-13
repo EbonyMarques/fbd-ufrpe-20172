@@ -1,5 +1,5 @@
 <?php
-require "..\infraestrutura\auxiliar.php";
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/infraestrutura\auxiliar.php";
 
 function cadastrar($nome, $cidade_origem, $ano_criacao) {
     $conexao = conectar();

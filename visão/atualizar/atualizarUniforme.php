@@ -1,5 +1,5 @@
 <?php
-    require "../controlador/uniforme.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/uniforme.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $cod_uniforme = rawurldecode(explode("?", $url)[1]);
@@ -23,18 +23,18 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="/fbd/index.html">Início</a></li>
-                <li><a href="exibirJogador.php">Jogador</a></li>
-                <li><a href="exibirJoga.php">Joga</a></li>
-                <li><a href="exibirTime.php">Time</a></li>
-                <li><a href="exibirPartida.php">Partida</a></li>
-                <li><a href="exibirArbitroPrincipal.php">Árbitro principal</a></li>
-                <li><a href="exibirTimeAmador.php">Time amador</a></li>
-                <li><a href="exibirTimeProfissional.php">Time profissional</a></li>
-                <li><a href="exibirDiretor.php">Diretor</a></li>
-                <li><a href="exibirPatrocinio.php">Patrocínio</a></li>
-                <li><a href="exibirPatrocinador.php">Patrocinador</a></li>
-                <li><a href="exibirUniforme.php">Uniforme</a></li>
-                <li><a href="exibirCor.php">Cor</a></li>
+                <li><a href="../exibirJogador.php">Jogador</a></li>
+                <li><a href="../exibirJoga.php">Joga</a></li>
+                <li><a href="../exibirTime.php">Time</a></li>
+                <li><a href="../exibirPartida.php">Partida</a></li>
+                <li><a href="../exibirArbitroPrincipal.php">Árbitro principal</a></li>
+                <li><a href="../exibirTimeAmador.php">Time amador</a></li>
+                <li><a href="../exibirTimeProfissional.php">Time profissional</a></li>
+                <li><a href="../exibirDiretor.php">Diretor</a></li>
+                <li><a href="../exibirPatrocinio.php">Patrocínio</a></li>
+                <li><a href="../exibirPatrocinador.php">Patrocinador</a></li>
+                <li><a href="../exibirUniforme.php">Uniforme</a></li>
+                <li><a href="../exibirCor.php">Cor</a></li>
             </ul>
         </div>
     </nav>

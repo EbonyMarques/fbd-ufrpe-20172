@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/joga.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/joga.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

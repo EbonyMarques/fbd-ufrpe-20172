@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/uniforme.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/uniforme.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

@@ -1,5 +1,5 @@
 <?php
-require "../controlador/time.php";
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ require "../controlador/time.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarTime.php?".$value["nome"]."'>Editar</a></li>
+                            <li><a href='atualizar/atualizarTime.php?".$value["nome"]."'>Editar</a></li>
                             <li><a href='cadastro/novoTime.php?".$value["nome"]."'>Excluir</a></li>
                           </ul>
                         </div>

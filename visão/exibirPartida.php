@@ -1,5 +1,5 @@
 <?php
-require "../controlador/partida.php";
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ require "../controlador/partida.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarPartida.php?".$value["nome_time_casa"]."?".$value["nome_time_fora"]."'>Atualizar</a></li>
+                            <li><a href='atualizar/atualizarPartida.php?".$value["nome_time_casa"]."?".$value["nome_time_fora"]."'>Atualizar</a></li>
                             <li><a href='cadastro/novaPartida.php?".$value["nome_time_casa"]."?".$value["nome_time_fora"]."'>Excluir</a></li>
                           </ul>
                         </div>

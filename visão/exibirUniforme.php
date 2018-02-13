@@ -64,7 +64,7 @@ require "../controlador/uniforme.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarUniforme.php?".$value["cod_uniforme"]."'>Editar</a></li>
+                            <li><a href='atualizar/atualizarUniforme.php?".$value["cod_uniforme"]."'>Editar</a></li>
                             <li><a href='cadastro/novoUniforme.php?".$value["cod_uniforme"]."'>Excluir</a></li>
                           </ul>
                         </div>

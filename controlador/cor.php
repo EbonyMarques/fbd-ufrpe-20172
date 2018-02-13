@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/cor.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/cor.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

@@ -1,5 +1,5 @@
 <?php
-    require "..\infraestrutura\auxiliar.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/infraestrutura\auxiliar.php";
 
     function cadastrar($cod_patrocinador, $nome) {
         $conexao = conectar();

@@ -1,5 +1,5 @@
 <?php
-    require "..\infraestrutura\auxiliar.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/infraestrutura/auxiliar.php";
 
     function cadastrar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();

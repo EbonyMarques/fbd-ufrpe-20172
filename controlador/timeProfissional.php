@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/timeProfissional.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/timeProfissional.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

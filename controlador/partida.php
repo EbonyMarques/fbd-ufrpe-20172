@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/partida.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/partida.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

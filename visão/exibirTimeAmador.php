@@ -60,7 +60,7 @@ require "../controlador/timeAmador.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarTimeAmador.php?".$value["nome"]."'>Editar</a></li>
+                            <li><a href='atualizar/atualizarTimeAmador.php?".$value["nome"]."'>Editar</a></li>
                             <li><a href='cadastro/novoTimeAmador.php?".$value["nome"]."'>Excluir</a></li>
                           </ul>
                         </div>

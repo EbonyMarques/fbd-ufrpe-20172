@@ -58,7 +58,7 @@ require "../controlador/timeProfissional.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarTimeProfissional.php?".$value["nome"]."'>Editar</a></li>
+                            <li><a href='atualizar/atualizarTimeProfissional.php?".$value["nome"]."'>Editar</a></li>
                             <li><a href='cadastro/novoTimeProfissional.php?".$value["nome"]."'>Excluir</a></li>
                           </ul>
                         </div>

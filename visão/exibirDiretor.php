@@ -1,5 +1,5 @@
 <?php
-require "../controlador/diretor.php";
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/diretor.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +60,7 @@ require "../controlador/diretor.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarDiretor.php?".$value["cod_diretor"]."'>Atualizar</a></li>
+                            <li><a href='atualizar/atualizarDiretor.php?".$value["cod_diretor"]."'>Atualizar</a></li>
                             <li><a href='cadastro/novoDiretor.php?".$value["cod_diretor"]."'>Excluir</a></li>
                           </ul>
                         </div>

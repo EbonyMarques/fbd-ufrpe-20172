@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/diretor.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/diretor.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

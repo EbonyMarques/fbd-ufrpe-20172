@@ -1,5 +1,5 @@
 <?php
-    require "../modelo/patrocinio.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/patrocinio.php";
 
     if(isset($_POST['acao'])) {
         $dados = array(

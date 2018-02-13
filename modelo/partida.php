@@ -1,5 +1,5 @@
 <?php
-    require "..\infraestrutura\auxiliar.php";
+    require $_SERVER["DOCUMENT_ROOT"]."/fbd/infraestrutura/auxiliar.php";
 
     function cadastrar($nome_time_casa, $nome_time_fora, $placar, $local, $data, $rg_arbitro) {
         $conexao = conectar();

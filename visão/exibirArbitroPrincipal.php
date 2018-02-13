@@ -61,7 +61,7 @@ require "../controlador/arbitroPrincipal.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='atualizarArbitroPrincipal.php?".$value["rg_arbitro"]."'>Editar</a></li>
+                            <li><a href='atualizar/atualizarArbitroPrincipal.php?".$value["rg_arbitro"]."'>Editar</a></li>
                             <li><a href='cadastro/novoArbitro.php?".$value["rg_arbitro"]."'>Excluir</a></li>
                           </ul>
                         </div>
