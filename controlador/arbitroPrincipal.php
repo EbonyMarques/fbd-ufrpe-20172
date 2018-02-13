@@ -4,7 +4,7 @@
     if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
-                "rg" => $_POST["rg"]
+                "rg_arbitro" => $_POST["rg_arbitro"]
             );
             exclusao($dados);
         } else {
@@ -60,7 +60,7 @@
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["rg"]);
+        $resultado = excluir($valor["rg_arbitro"]);
 
         if ($resultado) {
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirArbitroPrincipal.php'>";

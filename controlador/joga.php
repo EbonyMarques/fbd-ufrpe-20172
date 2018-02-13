@@ -5,7 +5,7 @@
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "cpf_jogador" => $_POST["cpf_jogador"],
-                "nome_time" => $_POST["nome_time"]
+                "nome" => $_POST["nome"]
             );
             exclusao($dados);
         } else {
@@ -65,7 +65,7 @@
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["cpf_jogador"],$valor["nome_time"]);
+        $resultado = excluir($valor["cpf_jogador"],$valor["nome"]);
 
         if ($resultado) {
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
