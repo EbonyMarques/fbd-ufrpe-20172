@@ -10,17 +10,17 @@
                     "tonalidade" => $_POST["tonalidade"],
                     "descricao" => $_POST["descricao"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de cor!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -32,19 +32,19 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $permissao = cadastrar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/cor.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $permissao = atualizar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/cor.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

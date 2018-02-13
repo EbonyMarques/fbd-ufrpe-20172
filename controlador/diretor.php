@@ -10,17 +10,17 @@
                     "nome" => $_POST["nome"],
                     "sobrenome" => $_POST["sobrenome"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de diretor!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -32,19 +32,19 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $permissao = cadastrar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/diretor.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $permissao = atualizar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/diretor.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

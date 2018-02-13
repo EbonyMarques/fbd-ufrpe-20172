@@ -19,6 +19,21 @@
         return $resultado;
     };
 
+    function lerEspecifico($cpf_jogador, $nome) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM joga WHERE cpf_jogador='$cpf_jogador' AND nome='$nome'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
     function atualizar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();
         $sql = "UPDATE joga SET posicao='$posicao', data_inicio='$data_inicio', data_fim='$data_fim' WHERE cpf_jogador='$cpf_jogador'AND nome='$nome'";

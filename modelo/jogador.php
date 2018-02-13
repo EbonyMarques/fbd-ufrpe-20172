@@ -20,6 +20,21 @@
 
     };
 
+    function lerEspecifico($cpf) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM jogador WHERE cpf='$cpf'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
     function atualizar($cpf, $nome) {
         $conexao = conectar();
         $sql = "UPDATE jogador SET nome='$nome' WHERE cpf='$cpf'";

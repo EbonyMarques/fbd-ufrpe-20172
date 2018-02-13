@@ -10,17 +10,17 @@
                     "cidade_origem" => $_POST["cidade_origem"],
                     "ano_criacao" => $_POST["ano_criacao"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de time amador!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -32,21 +32,21 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $resultado = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/timeAmador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $resultado = atualizar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/timeAmador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

@@ -20,6 +20,8 @@
 
     };
 
+
+
     function atualizar($cod_uniforme, $descricao, $cod_cor, $tipo_titular_reserva, $nome) {
         $conexao = conectar();
         $sql = "UPDATE uniforme SET descricao='$descricao', cod_cor='$cod_cor', tipo_titular_reserva = '$tipo_titular_reserva', nome='$nome' WHERE cod_uniforme='$cod_uniforme'";

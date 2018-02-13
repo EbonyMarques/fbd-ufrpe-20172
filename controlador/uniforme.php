@@ -12,17 +12,17 @@
                     "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
                     "nome" => $_POST["nome"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro!1";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -34,21 +34,21 @@
             return false;
         }
     }
-    function novo($valor){
+    function cadastro($valor){
         $resultado = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/uniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $resultado = atualizar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/uniforme.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

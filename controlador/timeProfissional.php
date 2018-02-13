@@ -9,17 +9,17 @@
                     'nome' => $_POST['nome'],
                     'cod_diretor' => $_POST['cod_diretor']
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de time profissional!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -31,21 +31,21 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $resultado = cadastrar($valor["nome"], $valor["cod_diretor"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/timeProfissional.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeProfissional.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $resultado = atualizar($valor["nome"], $valor["cod_diretor"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/timeProfissional.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeProfissional.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

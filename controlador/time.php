@@ -9,17 +9,17 @@
                     "nome" => $_POST["nome"],
                     "tipo" => $_POST["tipo"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de time!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -31,22 +31,22 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $resultado = cadastrar($valor["nome"], $valor["tipo"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/time.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTime.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $resultado = atualizar($valor["nome"], $valor["tipo"]);
 
         if ($resultado) {
-            echo "<meta http-equiv='refresh' content='1; url=../visão/time.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTime.php'>";
         }
 
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

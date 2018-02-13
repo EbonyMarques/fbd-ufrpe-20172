@@ -9,41 +9,64 @@
                     "cpf" => $_POST["cpf"],
                     "nome" => $_POST["nome"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de jogador!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+
+        if ($_POST["acao"]=="atualizar"){
+            $dados = array(
+                "cpf" => $_POST["cpf"],
+                "nome" => $_POST["nome"]
+            );
+            atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
     function exibeDados(){
         $resultado = ler();
+
         if ($resultado) {
             return $resultado;
         } else {
             return false;
         }
     }
-    function novo($valor) {
+
+    function verificacao($cpf) {
+        $resultado = lerEspecifico($cpf);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+
+    }
+
+    function cadastro($valor) {
         $permissao = cadastrar($valor['cpf'],$valor['nome']);
+
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/jogador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
         }
     }
-    function alterar($valor) {
+
+    function atualizacao($valor) {
         $permissao = atualizar($valor['cpf'],$valor['nome']);
+
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/jogador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
         }
     }
-    function excluirPorId($valor) {
+
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

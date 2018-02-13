@@ -9,17 +9,17 @@
                     "cod_patrocinador" => $_POST["cod_patrocinador"],
                     "nome" => $_POST["nome"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de patrocinador!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -31,19 +31,19 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $permissao = cadastrar($valor['cod_patrocinador'],$valor['nome']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinador.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $permissao = atualizar($valor['cod_patrocinador'],$valor['nome']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/patrocinador.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinador.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

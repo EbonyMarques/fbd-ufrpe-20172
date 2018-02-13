@@ -1,7 +1,6 @@
 <?php
-    require "../controlador/jogador.php";
+require "../controlador/diretor.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,51 +20,53 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="../index.html">Início</a></li>
-          <li class="active"><a href="jogador.php">Jogador</a></li>
-          <li><a href="joga.php">Joga</a></li>
-          <li><a href="time.php">Time</a></li>
-          <li><a href="partida.php">Partida</a></li>
-          <li><a href="arbitroPrincipal.php">Árbitro principal</a></li>
-          <li><a href="timeAmador.php">Time amador</a></li>
-          <li><a href="timeProfissional.php">Time profissional</a></li>
-          <li><a href="diretor.php">Diretor</a></li>
-          <li><a href="patrocinio.php">Patrocínio</a></li>
-          <li><a href="patrocinador.php">Patrocinador</a></li>
-          <li><a href="uniforme.php">Uniforme</a></li>
-          <li><a href="cor.php">Cor</a></li>
+          <li><a href="exibirJogador.php">Jogador</a></li>
+          <li><a href="exibirJoga.php">Joga</a></li>
+          <li><a href="exibirTime.php">Time</a></li>
+          <li><a href="exibirPartida.php">Partida</a></li>
+          <li><a href="exibirArbitroPrincipal.php">Árbitro principal</a></li>
+          <li><a href="exibirTimeAmador.php">Time amador</a></li>
+          <li><a href="exibirTimeProfissional.php">Time profissional</a></li>
+          <li class="active"><a href="exibirDiretor.php">Diretor</a></li>
+          <li><a href="exibirPatrocinio.php">Patrocínio</a></li>
+          <li><a href="exibirPatrocinador.php">Patrocinador</a></li>
+          <li><a href="exibirUniforme.php">Uniforme</a></li>
+          <li><a href="exibirCor.php">Cor</a></li>
         </ul>
       </div>
     </nav>
 
 <div class="container">
-  <h2>Jogador</h2>
-  <a href="cadastro/novoJogador.php" class="btn btn-primary" style="float:right;">Novo jogador</a>
+  <h2>Diretor</h2>
+  <a href="cadastro/novoDiretor.php" class="btn btn-primary" style="float:right;">Novo diretor</a>
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>CPF</th>
+        <th>Código</th>
         <th>Nome</th>
+        <th>Sobrenome</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
     <?php
-        foreach (exibeDados() as $value) {
-            echo "<tr>
-                    <td>".$value["cpf"]."</td>
+    foreach (exibeDados() as $value) {
+        echo "<tr>
+                    <td>".$value["cod_diretor"]."</td>
                     <td>".$value["nome"]."</td>
+                    <td>".$value["sobrenome"]."</td>
                     <td>
                         <div class='dropdown'>
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='cadastro/novoJogador.php?".$value["cpf"]."'>Editar</a></li>
-                            <li><a href='cadastro/novoJogador.php?".$value["cpf"]."'>Excluir</a></li>
+                            <li><a href='cadastro/novoDiretor.php?".$value["cod_diretor"]."'>Editar</a></li>
+                            <li><a href='cadastro/novoDiretor.php?".$value["cod_diretor"]."'>Excluir</a></li>
                           </ul>
                         </div>
                     </td>
-                  </tr>";
-        }
+              </tr>";
+    }
     ?>
     </tbody>
   </table>

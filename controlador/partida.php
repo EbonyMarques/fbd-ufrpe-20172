@@ -13,17 +13,17 @@
                     "data" => $_POST["data"],
                     "rg" => $_POST["rg"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de partida!";
             }
         }
-        if ($_POST["acao"]=="alterar"){
-            alterar('');
+        if ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         if ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -35,19 +35,19 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $permissao = cadastrar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/partida.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $permissao = atualizar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
         if ($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/partida.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 

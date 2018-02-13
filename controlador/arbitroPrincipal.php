@@ -10,17 +10,17 @@
                     "nome" => $_POST["nome"],
                     "habilitacao" => $_POST["habilitacao"]
                 );
-                novo($dados);
+                cadastro($dados);
             }
             else {
                 echo "Erro de cadastro de árbitro!";
             }
         }
-        elseif ($_POST["acao"]=="alterar"){
-            alterar('');
+        elseif ($_POST["acao"]=="atualizar"){
+            atualizacao('');
         }
         elseif ($_POST["acao"]=="excluir"){
-            excluir('');
+            exclusao('');
         }
     }
 
@@ -32,19 +32,19 @@
             return false;
         }
     }
-    function novo($valor) {
+    function cadastro($valor) {
         $permissao = cadastrar($valor['rg'],$valor['nome'],$valor['habilitacao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/arbitroPrincipal.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirArbitroPrincipal.php'>";
         }
     }
-    function alterar($valor) {
+    function atualizacao($valor) {
         $permissao = atualizar($valor['rg'],$valor['nome'],$valor['habilitacao']);
         if($permissao){
-            echo "<meta http-equiv='refresh' content='1; url=../visão/arbitroPrincipal.php'>";
+            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirArbitroPrincipal.php'>";
         }
     }
-    function excluirPorId($valor) {
+    function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }
 
