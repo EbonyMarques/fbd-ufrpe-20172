@@ -19,10 +19,24 @@
         return $resultado;
 
     };
-
-    function atualizar($nome, $tipo, $cod_uniforme) {
+    function lerEspecifico($nome) {
         $conexao = conectar();
-        $sql = "UPDATE time SET tipo='$tipo', cod_uniforme='$cod_uniforme' WHERE nome='$nome'";
+        $sql = "SELECT * FROM time WHERE nome='$nome'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
+    function atualizar($nome, $tipo) {
+        $conexao = conectar();
+        $sql = "UPDATE time SET tipo='$tipo' WHERE nome='$nome'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
         desconectar($conexao);
 

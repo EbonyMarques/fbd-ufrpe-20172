@@ -20,7 +20,20 @@
 
     };
 
+    function lerEspecifico($cod_uniforme) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM uniforme WHERE cod_uniforme='$cod_uniforme'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
 
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
 
     function atualizar($cod_uniforme, $descricao, $cod_cor, $tipo_titular_reserva, $nome) {
         $conexao = conectar();

@@ -1,14 +1,14 @@
 <?php
-    require "../controlador/jogador.php";
+    require "../controlador/timeProfissional.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cpf = explode("?", $url)[1];
+    $nome = rawurldecode(explode("?", $url)[1]);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar jogador</title>
+    <title>Atualizar Time Profissional</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -40,27 +40,27 @@
     </nav>
 
     <?php
-        $resultado = verificacao($cpf);
+        $resultado = verificacao($nome);
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Time Profissional inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirTimeProfissional.php'>";
         } else {
-            $nome = $resultado["nome"];
+            $cod_diretor = $resultado["cod_diretor"];
 
             echo "<div class=\"container\">
-                    <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
-                        <div class=\"form-group\">
-                            <label for=\"cpf\">CPF:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
-                        </div>
+                    <h2>Atualizar time profissional</h2>
+                    <form action=\"/fbd/controlador/timeProfissional.php\" method=\"post\">
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <input type=\"text\" readonly class=\"form-control\" name=\"nome\" value='$nome'>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"cod_diretor\">Código do diretor:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"cod_diretor\" value='$cod_diretor'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>

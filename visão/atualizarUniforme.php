@@ -1,14 +1,14 @@
 <?php
-    require "../controlador/jogador.php";
+    require "../controlador/uniforme.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cod_uniforme = explode("?", $url)[1];
+    $cod_uniforme = rawurldecode(explode("?", $url)[1]);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar jogador</title>
+    <title>Atualizar uniforme</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -44,15 +44,18 @@
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Uniforme inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirUniforme.php'>";
         } else {
             $nome = $resultado["nome"];
+            $descricao = $resultado["descricao"];
+            $cod_cor = $resultado["cod_cor"];
+            $tipo_titular_reserva = $resultado["tipo_titular_reserva"];
 
             echo "<div class=\"container\">
-                    <h2>Novo uniforme</h2>
+                    <h2>Atualizar uniforme</h2>
                     <form action=\"/fbd/controlador/uniforme.php\" method=\"post\">
                         <div class=\"form-group\">
                             <label for=\"cod_uniforme\">Código do uniforme:</label>
@@ -60,22 +63,22 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"cod_cor\">Código da cor:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"cod_cor\">
+                            <input type=\"text\" class=\"form-control\" name=\"cod_cor\" value='$cod_cor'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome do time:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\">
+                            <input type=\"text\" class=\"form-control\" name=\"nome\" value='$nome'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo_titular_reserva\">Tipo de uniforme:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"tipo_titular_reserva\">
+                            <input type=\"text\" class=\"form-control\" name=\"tipo_titular_reserva\" value='$tipo_titular_reserva'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"descricao\">Descrição:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"descricao\">
+                            <input type=\"text\" class=\"form-control\" name=\"descricao\" value='$descricao'>
                         </div>
-                        <input type=\"hidden\" value=\"cadastrar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Cadastrar</button>
+                        <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
+                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>
             ";

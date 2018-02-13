@@ -20,6 +20,21 @@
 
     };
 
+    function lerEspecifico($nome) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM time_profissional WHERE nome='$nome'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
     function atualizar($nome, $cod_diretor) {
         $conexao = conectar();
         $sql = "UPDATE time_profissional SET cod_diretor='$cod_diretor' WHERE nome='$nome'";

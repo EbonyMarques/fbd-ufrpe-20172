@@ -2,13 +2,13 @@
     require "../modelo/time.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "nome" => $_POST["nome"],
+            "tipo" => $_POST["tipo"]
+        );
         if ($_POST["acao"]=="cadastrar"){
             $permitir = true;
             if ($permitir) {
-                $dados = array(
-                    "nome" => $_POST["nome"],
-                    "tipo" => $_POST["tipo"]
-                );
                 cadastro($dados);
             }
             else {
@@ -16,7 +16,7 @@
             }
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         if ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -30,6 +30,16 @@
         } else {
             return false;
         }
+    }
+    function verificacao($nome) {
+        $resultado = lerEspecifico($nome);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+
     }
     function cadastro($valor) {
         $resultado = cadastrar($valor["nome"], $valor["tipo"]);

@@ -2,16 +2,16 @@
     require "../modelo/uniforme.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cod_uniforme" => $_POST["cod_uniforme"],
+            "descricao" => $_POST["descricao"],
+            "cod_cor" => $_POST["cod_cor"],
+            "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
+            "nome" => $_POST["nome"]
+        );
         if ($_POST["acao"]=="cadastrar"){
             $permitir = true;
             if ($permitir) {
-                $dados = array(
-                    "cod_uniforme" => $_POST["cod_uniforme"],
-                    "descricao" => $_POST["descricao"],
-                    "cod_cor" => $_POST["cod_cor"],
-                    "tipo_titular_reserva" => $_POST["tipo_titular_reserva"],
-                    "nome" => $_POST["nome"]
-                );
                 cadastro($dados);
             }
             else {
@@ -19,7 +19,7 @@
             }
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         if ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -34,6 +34,18 @@
             return false;
         }
     }
+
+    function verificacao($cod_uniforme) {
+        $resultado = lerEspecifico($cod_uniforme);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+
+    }
+
     function cadastro($valor){
         $resultado = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 

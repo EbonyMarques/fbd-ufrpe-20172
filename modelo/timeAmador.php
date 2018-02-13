@@ -20,6 +20,21 @@ function ler() {
 
 };
 
+function lerEspecifico($nome) {
+    $conexao = conectar();
+    $sql = "SELECT * FROM time_amador WHERE nome='$nome'";
+    $resultado = mysqli_query($conexao, $sql);
+    desconectar($conexao);
+
+    $array = [];
+
+    while($elemento = mysqli_fetch_array($resultado)) {
+        $array = $elemento;
+    }
+
+    return $array;
+}
+
 function atualizar($nome, $cidade_origem, $ano_criacao) {
     $conexao = conectar();
     $sql = "UPDATE time_amador SET cidade_origem='$cidade_origem', ano_criacao='$ano_criacao' WHERE nome='$nome'";

@@ -20,7 +20,7 @@
 
     };
 
-    function excluir($cod_patrocinador) {
+    function excluir($cod_patrocinador,$nome) {
         $conexao = conectar();
         $sql = "DELETE FROM patrocinio WHERE cod_patrocinador='$cod_patrocinador' AND nome='$nome'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");

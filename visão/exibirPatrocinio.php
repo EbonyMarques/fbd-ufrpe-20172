@@ -58,7 +58,6 @@ require "../controlador/patrocinio.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='cadastro/novoPatrocinio.php?".$value["cod_patrocinador"]."?".$value["nome"]."'>Editar</a></li>
                             <li><a href='cadastro/novoPatrocinio.php?".$value["cod_patrocinador"]."?".$value["nome"]."'>Excluir</a></li>
                           </ul>
                         </div>
