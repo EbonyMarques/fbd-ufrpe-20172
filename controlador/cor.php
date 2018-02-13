@@ -2,22 +2,17 @@
     require "../modelo/cor.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cod_cor" => $_POST["cod_cor"],
+            "tonalidade" => $_POST["tonalidade"],
+            "descricao" => $_POST["descricao"]
+        );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "cod_cor" => $_POST["$cod_cor"],
-                    "tonalidade" => $_POST["tonalidade"],
-                    "descricao" => $_POST["descricao"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de cor!";
-            }
+            cadastro($dados);
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         if ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -32,18 +27,31 @@
             return false;
         }
     }
+
+    function verificacao($cod_cor) {
+        $resultado = lerEspecifico($cod_cor);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
+        $permissao = cadastrar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }
     }
+
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cpf_jogador'],$valor['tonalidade'],$valor['descricao']);
+        $permissao = atualizar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
         if($permissao){
             echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
         }
     }
+
     function exclusao($valor) {
         # pega os dados do form e manda pro modelo...
     }

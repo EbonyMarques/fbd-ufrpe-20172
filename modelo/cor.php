@@ -20,6 +20,22 @@
 
     };
 
+    function lerEspecifico($cod_cor) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM cor WHERE cod_cor='$cod_cor'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
+
     function atualizar($cod_cor, $tonalidades_cores, $descricao) {
         $conexao = conectar();
         $sql = "UPDATE cor SET tonalidades_cores='$tonalidades_cores', descricao='$descricao' WHERE cod_cor='$cod_cor'";

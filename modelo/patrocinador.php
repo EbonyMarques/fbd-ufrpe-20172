@@ -20,6 +20,21 @@
 
     };
 
+    function lerEspecifico($cod_patrocinador) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM patrocinador WHERE cod_patrocinador='$cod_patrocinador'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
     function atualizar($cod_patrocinador, $nome_patrocinador) {
         $conexao = conectar();
         $sql = "UPDATE patrocinador SET nome_patrocinador='$nome_patrocinador' WHERE cod_patrocinador='$cod_patrocinador'";

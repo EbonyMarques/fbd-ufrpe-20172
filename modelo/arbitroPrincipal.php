@@ -17,10 +17,25 @@
         desconectar($conexao);
 
         return $resultado;
-
     };
 
-    function atualizar($rg_arbitro, $nome, $tipo_habilitacao) {
+    function lerEspecifico($rg_arbitro) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM arbitro_principal WHERE rg_arbitro='$rg_arbitro'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
+
+function atualizar($rg_arbitro, $nome, $tipo_habilitacao) {
         $conexao = conectar();
         $sql = "UPDATE arbitro_principal SET nome='$nome', tipo_habilitacao='$tipo_habilitacao' WHERE rg_arbitro='$rg_arbitro'";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");

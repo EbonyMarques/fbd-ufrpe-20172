@@ -1,23 +1,17 @@
 <?php
     require "../modelo/arbitroPrincipal.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
+        $dados = array(
+            "rg" => $_POST["rg"],
+            "nome" => $_POST["nome"],
+            "habilitacao" => $_POST["tipo_habilitacao"]);
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "rg" => $_POST["rg"],
-                    "nome" => $_POST["nome"],
-                    "habilitacao" => $_POST["habilitacao"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de árbitro!";
-            }
+            cadastro($dados);
         }
         elseif ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         elseif ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -32,6 +26,17 @@
             return false;
         }
     }
+
+    function verificacao($rg) {
+        $resultado = lerEspecifico($rg);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor['rg'],$valor['nome'],$valor['habilitacao']);
         if($permissao){

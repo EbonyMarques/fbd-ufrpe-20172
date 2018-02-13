@@ -20,6 +20,21 @@
 
     };
 
+    function lerEspecifico($cod_diretor) {
+        $conexao = conectar();
+        $sql = "SELECT * FROM diretor WHERE cod_diretor='$cod_diretor'";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $array = [];
+
+        while($elemento = mysqli_fetch_array($resultado)) {
+            $array = $elemento;
+        }
+
+        return $array;
+    }
+
     function atualizar($cod_diretor, $nome, $sobrenome) {
         $conexao = conectar();
         $sql = "UPDATE diretor SET nome='$nome', sobrenome='$sobrenome' WHERE cod_diretor='$cod_diretor'";

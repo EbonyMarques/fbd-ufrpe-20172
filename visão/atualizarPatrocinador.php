@@ -1,14 +1,14 @@
 <?php
-    require "../controlador/jogador.php";
+    require "../controlador/patrocinador.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cpf = explode("?", $url)[1];
+    $cod_patrocinador = explode("?", $url)[1];
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Cadastrar jogador</title>
+    <title>Atualizar patrocinador</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
@@ -40,23 +40,23 @@
     </nav>
 
     <?php
-        $resultado = verificacao($cpf);
+        $resultado = verificacao($cod_patrocinador);
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Patrocinador inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirPatrocinador.php'>";
         } else {
-            $nome = $resultado["nome"];
+            $nome = $resultado["nome_patrocinador"];
 
             echo "<div class=\"container\">
                     <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
+                    <form action=\"/fbd/controlador/patrocinador.php\" method=\"post\">
                         <div class=\"form-group\">
-                            <label for=\"cpf\">CPF:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
+                            <label for=\"cod_patrocinador\">Código:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"cod_patrocinador\" value=\"$cod_patrocinador\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome:</label>

@@ -1,8 +1,9 @@
 <?php
-require "../controlador/jogador.php";
+require "../controlador/arbitroPrincipal.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cpf = explode("?", $url)[1];
+    $rg = explode("?", $url)[1];
+
 ?>
 
 <!DOCTYPE html>
@@ -40,27 +41,32 @@ require "../controlador/jogador.php";
     </nav>
 
     <?php
-        $resultado = verificacao($cpf);
+        $resultado = verificacao($rg);
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Árbitro inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirArbitro.php'>";
         } else {
             $nome = $resultado["nome"];
+            $tipo_habilitacao = $resultado["tipo_habilitacao"];
 
             echo "<div class=\"container\">
                     <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
+                    <form action=\"/fbd/controlador/arbitroPrincipal.php\" method=\"post\">
                         <div class=\"form-group\">
-                            <label for=\"cpf\">CPF:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
+                            <label for=\"rg\">RG:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"rg\" value=\"$rg\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome:</label>
                             <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"tipo_habilitacao\">Tipo de habilitação:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"tipo_habilitacao\" value=\"$tipo_habilitacao\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>

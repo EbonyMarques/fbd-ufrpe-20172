@@ -2,22 +2,16 @@
     require "../modelo/diretor.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cod_diretor" => $_POST["cod_diretor"],
+            "nome" => $_POST["nome"],
+            "sobrenome" => $_POST["sobrenome"]
+        );
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "cod_diretor" => $_POST["cod_diretor"],
-                    "nome" => $_POST["nome"],
-                    "sobrenome" => $_POST["sobrenome"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de diretor!";
-            }
+            cadastro($dados);
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         if ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -32,6 +26,17 @@
             return false;
         }
     }
+
+    function verificacao($cod_diretor) {
+        $resultado = lerEspecifico($cod_diretor);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
         if($permissao){

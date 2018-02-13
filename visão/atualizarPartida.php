@@ -1,8 +1,11 @@
 <?php
-require "../controlador/jogador.php";
+require "../controlador/partida.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cpf = explode("?", $url)[1];
+    $urlSeparado = explode("?", $url);
+
+    $nome_time_casa = rawurldecode($urlSeparado[1]);
+    $nome_time_fora = rawurldecode($urlSeparado[2]);
 ?>
 
 <!DOCTYPE html>
@@ -40,27 +43,46 @@ require "../controlador/jogador.php";
     </nav>
 
     <?php
-        $resultado = verificacao($cpf);
+        $resultado = verificacao($nome_time_casa, $nome_time_fora);
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Partida inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirPartida.php'>";
         } else {
-            $nome = $resultado["nome"];
+            $placar = $resultado["placar"];
+            $local = $resultado["local"];
+            $data = $resultado["data"];
+            $rg_arbitro = $resultado["rg_arbitro"];
 
             echo "<div class=\"container\">
-                    <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
+                    <h2>Atualizar partida</h2>
+                    <form action=\"/fbd/controlador/partida.php\" method=\"post\">
                         <div class=\"form-group\">
-                            <label for=\"cpf\">CPF:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
+                            <label for=\"nome_time_casa\">Nome do time da casa:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"nome_time_casa\" value='$nome_time_casa'>
                         </div>
                         <div class=\"form-group\">
-                            <label for=\"nome\">Nome:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <label for=\"nome_time_fora\">Nome do time de fora:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"nome_time_fora\" value='$nome_time_fora'>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"placar\">Placar:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"placar\" value='$placar'>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"local\">Local:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"local\" value='$local'>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"data\">Data:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"data\" value='$data'>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"rg\">RG do árbitro:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"rg\" value='$rg_arbitro'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>

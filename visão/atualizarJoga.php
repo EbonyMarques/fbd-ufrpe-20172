@@ -58,14 +58,14 @@
 
             echo "<div class=\"container\">
                     <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
+                    <form action=\"/fbd/controlador/joga.php\" method=\"post\">
                         <div class=\"form-group\">
-                            <label for=\"cpf\">CPF do jogador:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
+                            <label for=\"cpf_jogador\">CPF do jogador:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf_jogador\" value=\"$cpf\">
                         </div>
                         <div class=\"form-group\">
-                            <label for=\"nome\">Nome do time:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <label for=\"nome_time\">Nome do time:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"nome_time\" value=\"$nome\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"posicao\">Posição:</label>
@@ -76,8 +76,8 @@
                             <input type=\"text\" class=\"form-control\" name=\"data_inicio\" value=\"$data_inicio\">
                         </div>
                         <div class=\"form-group\">
-                            <label for=\"data_fim\">Data final:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"data_fim\" value=\"$data_fim\">
+                            <label for=\"data_final\">Data final:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"data_final\" value=\"$data_fim\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>

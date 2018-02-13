@@ -1,8 +1,8 @@
 <?php
-    require "../controlador/jogador.php";
+    require "../controlador/cor.php";
 
     $url= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $cpf = explode("?", $url)[1];
+    $cod_cor = explode("?", $url)[1];
 ?>
 
 <!DOCTYPE html>
@@ -40,27 +40,32 @@
     </nav>
 
     <?php
-        $resultado = verificacao($cpf);
+        $resultado = verificacao($cod_cor);
 
         if (!$resultado) {
             echo "<div class=\"container\">
-                    <h2>Jogador inexistente!</h2>
+                    <h2>Cor inexistente!</h2>
                   </div>";
 
-            echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJogador.php'>";
+            //echo "<meta http-equiv='refresh' content='1; url=../visão/exibirCor.php'>";
         } else {
-            $nome = $resultado["nome"];
+            $tonalidade = $resultado["tonalidades_cores"];
+            $descricao = $resultado["descricao"];
 
             echo "<div class=\"container\">
-                    <h2>Atualizar jogador</h2>
-                    <form action=\"/fbd/controlador/jogador.php\" method=\"post\">
+                    <h2>Atualizar cor</h2>
+                    <form action=\"/fbd/controlador/cor.php\" method=\"post\">
                         <div class=\"form-group\">
-                            <label for=\"cpf\">CPF:</label>
-                            <input type=\"text\" readonly class=\"form-control\" name=\"cpf\" value=\"$cpf\">
+                            <label for=\"cod_cor\">Código:</label>
+                            <input type=\"text\" readonly class=\"form-control\" name=\"cod_cor\" value=\"$cod_cor\">
                         </div>
                         <div class=\"form-group\">
-                            <label for=\"nome\">Nome:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <label for=\"tonalidade\">Tonalidade:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"tonalidade\" value=\"$tonalidade\">
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"descricao\">Descrição:</label>
+                            <input type=\"text\" class=\"form-control\" name=\"descricao\" value=\"$descricao\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>

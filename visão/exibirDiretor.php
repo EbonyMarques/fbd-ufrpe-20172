@@ -60,7 +60,7 @@ require "../controlador/diretor.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li><a href='cadastro/novoDiretor.php?".$value["cod_diretor"]."'>Editar</a></li>
+                            <li><a href='atualizarDiretor.php?".$value["cod_diretor"]."'>Atualizar</a></li>
                             <li><a href='cadastro/novoDiretor.php?".$value["cod_diretor"]."'>Excluir</a></li>
                           </ul>
                         </div>

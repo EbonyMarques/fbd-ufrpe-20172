@@ -2,22 +2,18 @@
     require "../modelo/patrocinador.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cod_patrocinador" => $_POST["cod_patrocinador"],
+            "nome" => $_POST["nome"]
+        );
+
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "cod_patrocinador" => $_POST["cod_patrocinador"],
-                    "nome" => $_POST["nome"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de patrocinador!";
-            }
+            cadastro($dados);
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
+
         if ($_POST["acao"]=="excluir"){
             exclusao('');
         }
@@ -31,6 +27,17 @@
             return false;
         }
     }
+
+    function verificacao($cod_patrocinador) {
+        $resultado = lerEspecifico($cod_patrocinador);
+
+        if ($resultado) {
+            return $resultado;
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor['cod_patrocinador'],$valor['nome']);
         if ($permissao){

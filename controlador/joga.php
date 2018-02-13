@@ -2,24 +2,18 @@
     require "../modelo/joga.php";
 
     if(isset($_POST['acao'])) {
+        $dados = array(
+            "cpf_jogador" => $_POST["cpf_jogador"],
+            "nome_time" => $_POST["nome_time"],
+            "posicao" => $_POST["posicao"],
+            "data_inicio" => $_POST["data_inicio"],
+            "data_final" => $_POST["data_final"]
+        );
         if ($_POST["acao"]=="cadastrar"){
-            $permitir = true;
-            if ($permitir) {
-                $dados = array(
-                    "cpf_jogador" => $_POST["cpf_jogador"],
-                    "nome_time" => $_POST["nome_time"],
-                    "posicao" => $_POST["posicao"],
-                    "data_inicio" => $_POST["data_inicio"],
-                    "data_final" => $_POST["data_final"]
-                );
-                cadastro($dados);
-            }
-            else {
-                echo "Erro de cadastro de relação 'joga'!";
-            }
+            cadastro($dados);
         }
         if ($_POST["acao"]=="atualizar"){
-            atualizacao('');
+            atualizacao($dados);
         }
         if ($_POST["acao"]=="excluir"){
             exclusao('');
@@ -45,7 +39,6 @@
         }
 
     }
-
 
     function cadastro($valor) {
         $permissao = cadastrar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
