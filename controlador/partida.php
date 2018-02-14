@@ -49,42 +49,42 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
+        $permissao = cadastrar($valor["nome_time_casa"],$valor["nome_time_fora"],$valor["placar"],$valor["local"],$valor["data"],$valor["rg"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar partida!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar partida!</b>";
         }
-        header('Location: ../visão/exibirPartida.php');
+        header("Location: ../visão/exibirPartida.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
+        $permissao = atualizar($valor["nome_time_casa"],$valor["nome_time_fora"],$valor["placar"],$valor["local"],$valor["data"],$valor["rg"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar partida!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar partida!</b>";
         }
-        header('Location: ../visão/exibirPartida.php');
+        header("Location: ../visão/exibirPartida.php");
     }
 
     function exclusao($valor) {
         $permissao = excluir($valor["nome_time_casa"], $valor["nome_time_fora"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir partida!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir partida!</b>";
         }
-        header('Location: ../visão/exibirPartida.php');
+        header("Location: ../visão/exibirPartida.php");
     }
 
 ?>

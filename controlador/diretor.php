@@ -45,42 +45,42 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
+        $permissao = cadastrar($valor["cod_diretor"],$valor["nome"],$valor["sobrenome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar diretor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar diretor!</b>";
         }
-        header('Location: ../visão/exibirDiretor.php');
+        header("Location: ../visão/exibirDiretor.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
+        $permissao = atualizar($valor["cod_diretor"],$valor["nome"],$valor["sobrenome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar diretor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar diretor!</b>";
         }
-        header('Location: ../visão/exibirDiretor.php');
+        header("Location: ../visão/exibirDiretor.php");
     }
 
     function exclusao($valor) {
         $resultado = excluir($valor["cod_diretor"]);
 
         if($resultado){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir diretor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir diretor!</b>";
         }
-        header('Location: ../visão/exibirDiretor.php');
+        header("Location: ../visão/exibirDiretor.php");
     }
 
 ?>

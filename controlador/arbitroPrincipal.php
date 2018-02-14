@@ -44,42 +44,41 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['rg'],$valor['nome'],$valor['habilitacao']);
+        $permissao = cadastrar($valor["rg"],$valor["nome"],$valor["habilitacao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar árbitro!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar árbitro!</b>";
         }
-        header('Location: ../visão/exibirArbitroPrincipal.php');
+        header("Location: ../visão/exibirArbitroPrincipal.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['rg'],$valor['nome'],$valor['habilitacao']);
+        $permissao = atualizar($valor["rg"],$valor["nome"],$valor["habilitacao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário atualizado com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar árbitro!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao atualizar usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar árbitro!</b>";
         }
-        header('Location: ../visão/exibirArbitroPrincipal.php');
+        header("Location: ../visão/exibirArbitroPrincipal.php");
     }
 
     function exclusao($valor) {
         $resultado = excluir($valor["rg_arbitro"]);
 
         if($resultado){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário excluido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "Sucesso ao excluir árbitro!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao excluir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir árbitro!</b>";
         }
-        header('Location: ../visão/exibirArbitroPrincipal.php');
+        header("Location: ../visão/exibirArbitroPrincipal.php");
     }
-
 ?>

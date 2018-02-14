@@ -44,40 +44,40 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cod_patrocinador'],$valor['nome']);
+        $permissao = cadastrar($valor["cod_patrocinador"],$valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar patrocinador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar patrocinador!</b>";
         }
-        header('Location: ../visão/exibirPatrocinador.php');
+        header("Location: ../visão/exibirPatrocinador.php");
     }
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cod_patrocinador'],$valor['nome']);
+        $permissao = atualizar($valor["cod_patrocinador"],$valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar patrocinador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar patrocinador!</b>";
         }
-        header('Location: ../visão/exibirPatrocinador.php');
+        header("Location: ../visão/exibirPatrocinador.php");
     }
     function exclusao($valor) {
         $permissao = excluir($valor["cod_patrocinador"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir patrocinador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir patrocinador!</b>";
         }
-        header('Location: ../visão/exibirPatrocinador.php');
+        header("Location: ../visão/exibirPatrocinador.php");
     }
 
 ?>

@@ -45,41 +45,41 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cpf'],$valor['nome']);
+        $permissao = cadastrar($valor["cpf"],$valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar jogador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar jogador!</b>";
         }
-        header('Location: ../visão/exibirJogador.php');
+        header("Location: ../visão/exibirJogador.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cpf'],$valor['nome']);
+        $permissao = atualizar($valor["cpf"],$valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar jogador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar jogador!</b>";
         }
-        header('Location: ../visão/exibirJogador.php');
+        header("Location: ../visão/exibirJogador.php");
     }
 
     function exclusao($valor) {
         $permissao = excluir($valor["cpf"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir jogador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir jogador!</b>";
         }
-        header('Location: ../visão/exibirJogador.php');
+        header("Location: ../visão/exibirJogador.php");
     }
 ?>

@@ -45,42 +45,42 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
+        $permissao = cadastrar($valor["cod_cor"],$valor["tonalidade"],$valor["descricao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar cor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar cor!</b>";
         }
-        header('Location: ../visão/exibirCor.php');
+        header("Location: ../visão/exibirCor.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
+        $permissao = atualizar($valor["cod_cor"],$valor["tonalidade"],$valor["descricao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar cor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar!</b>";
         }
-        header('Location: ../visão/exibirCor.php');
+        header("Location: ../visão/exibirCor.php");
     }
 
     function exclusao($valor) {
         $resultado = excluir($valor["cod_cor"]);
 
         if($resultado){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir cor!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir cor!</b>";
         }
-        header('Location: ../visão/exibirCor.php');
+        header("Location: ../visão/exibirCor.php");
     }
 
 ?>

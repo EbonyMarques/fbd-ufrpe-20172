@@ -81,7 +81,7 @@
                 <h4 class="modal-title"><b>Excluir registro</b></h4>
             </div>
             <div class="modal-body">
-                <p>Você tem certeza que deseja excluir este registro do banco de dados?</p>
+                <p>Você tem certeza de que deseja excluir este registro do banco de dados?</p>
             </div>
             <div class="modal-footer">
                 <form action="/fbd/controlador/jogador.php" method="post">

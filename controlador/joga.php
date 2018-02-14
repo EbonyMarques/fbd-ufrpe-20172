@@ -18,6 +18,13 @@
             );
 
             if ($_POST["acao"]=="cadastrar"){
+
+                var_dump($dados["cpf_jogador"]);
+                var_dump($dados["nome_time"]);
+                var_dump($dados["posicao"]);
+                var_dump($dados["data_inicio"]);
+                var_dump($dados["data_final"]);
+
                 cadastro($dados);
             }
 
@@ -49,42 +56,42 @@
     }
 
     function cadastro($valor) {
-        $permissao = cadastrar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
+        $permissao = cadastrar($valor["cpf_jogador"],$valor["nome_time"],$valor["posicao"],$valor["data_inicio"],$valor["data_final"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar relação 'joga'!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar usuário!</b>";
         }
-        header('Location: ../visão/exibirJoga.php');
+        header("Location: ../visão/exibirJoga.php");
     }
 
     function atualizacao($valor) {
-        $permissao = atualizar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
+        $permissao = atualizar($valor["cpf_jogador"],$valor["nome_time"],$valor["posicao"],$valor["data_inicio"],$valor["data_final"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar relação 'joga'!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar relação 'joga'!</b>";
         }
-        header('Location: ../visão/exibirJoga.php');
+        header("Location: ../visão/exibirJoga.php");
     }
 
     function exclusao($valor) {
         $permissao = excluir($valor["cpf_jogador"],$valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir relação 'joga'!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir relação 'joga'!</b>";
         }
-        header('Location: ../visão/exibirJoga.php');
+        header("Location: ../visão/exibirJoga.php");
     }
 
 ?>
