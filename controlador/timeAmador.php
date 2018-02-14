@@ -48,39 +48,39 @@
         $permissao = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar o time amador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar o time amador!</b>";
         }
-        header('Location: ../visão/exibirTimeAmador.php');
+        header("Location: ../visão/exibirTimeAmador.php");
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar o time amador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar o time amador!</b>";
         }
-        header('Location: ../visão/exibirTimeAmador.php');
+        header("Location: ../visão/exibirTimeAmador.php");
     }
 
     function exclusao($valor) {
         $permissao = excluir($valor["nome"]);
 
         if($permissao){
-            $_SESSION['alertaTipo'] = 'success';
-            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+            $_SESSION["alertaTipo"] = "success";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir o time amador!</b>";
         } else {
-            $_SESSION['alertaTipo'] = 'error';
-            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
+            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir o time amador!</b>";
         }
-        header('Location: ../visão/exibirTimeAmador.php');
+        header("Location: ../visão/exibirTimeAmador.php");
     }
 
 ?>
