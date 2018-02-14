@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/time.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "nome" => $_POST["nome"]

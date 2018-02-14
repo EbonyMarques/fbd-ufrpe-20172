@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/partida.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "nome_time_casa" => $_POST["nome_time_casa"],

@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/jogador.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "cpf" => $_POST["cpf"]

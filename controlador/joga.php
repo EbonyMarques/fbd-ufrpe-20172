@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/joga.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "cpf_jogador" => $_POST["cpf_jogador"],
@@ -18,13 +18,6 @@
             );
 
             if ($_POST["acao"]=="cadastrar"){
-
-                var_dump($dados["cpf_jogador"]);
-                var_dump($dados["nome_time"]);
-                var_dump($dados["posicao"]);
-                var_dump($dados["data_inicio"]);
-                var_dump($dados["data_final"]);
-
                 cadastro($dados);
             }
 

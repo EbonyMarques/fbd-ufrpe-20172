@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/timeProfissional.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         if ($_POST["acao"]=="excluir"){
             $dados = array(
                 "nome" => $_POST["nome"]
@@ -9,8 +9,8 @@
             exclusao($dados);
         } else {
             $dados = array(
-                'nome' => $_POST['nome'],
-                'cod_diretor' => $_POST['cod_diretor']
+                "nome" => $_POST["nome"],
+                "cod_diretor" => $_POST["cod_diretor"]
             );
 
             if ($_POST["acao"]=="cadastrar"){

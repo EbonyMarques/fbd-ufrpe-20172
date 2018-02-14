@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/fbd/modelo/patrocinio.php";
 
-    if(isset($_POST['acao'])) {
+    if(isset($_POST["acao"])) {
         $dados = array(
             "cod_patrocinador" => $_POST["cod_patrocinador"],
             "nome" => $_POST["nome"]

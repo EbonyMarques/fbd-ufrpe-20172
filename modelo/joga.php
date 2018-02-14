@@ -3,7 +3,7 @@
 
     function cadastrar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();
-        $sql = "INSERT INTO joga values ('$cpf_jogador', '$nome', $posicao, $data_inicio, $data_fim)";
+        $sql = "INSERT INTO joga values ('$cpf_jogador', '$nome', '$posicao', '$data_inicio', '$data_fim')";
         $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
         desconectar($conexao);
 
