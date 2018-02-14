@@ -40,7 +40,7 @@ require "../controlador/arbitroPrincipal.php";
 
 <div class="container">
     <a href="cadastro/novoArbitro.php" class="btn btn-primary add-button">Novo árbitro</a>
-  <h2 class="header">Cor</h2>
+  <h2 class="header">Árbitro</h2>
   <table class="table table-hover">
     <thead>
       <tr>

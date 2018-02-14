@@ -51,12 +51,14 @@
     function cadastro($valor) {
         $permissao = cadastrar($valor["cpf_jogador"],$valor["nome_time"],$valor["posicao"],$valor["data_inicio"],$valor["data_final"]);
 
+        var_dump($permissao);
+
         if($permissao){
             $_SESSION["alertaTipo"] = "success";
-            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar relação 'joga'!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar relação <i>joga</i>!</b>";
         } else {
             $_SESSION["alertaTipo"] = "error";
-            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar usuário!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar relação <i>joga</i>!</b>";
         }
         header("Location: ../visão/exibirJoga.php");
     }
@@ -66,10 +68,10 @@
 
         if($permissao){
             $_SESSION["alertaTipo"] = "success";
-            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar relação 'joga'!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar relação <i>joga</i>!</b>";
         } else {
             $_SESSION["alertaTipo"] = "error";
-            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar relação 'joga'!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar relação <i>joga</i>!</b>";
         }
         header("Location: ../visão/exibirJoga.php");
     }
@@ -79,10 +81,10 @@
 
         if($permissao){
             $_SESSION["alertaTipo"] = "success";
-            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir relação 'joga'!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir relação <i>joga</i>!</b>";
         } else {
             $_SESSION["alertaTipo"] = "error";
-            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir relação 'joga'!</b>";
+            $_SESSION["alertaMensagem"] = "<b>Erro ao excluir relação <i>joga</i>!</b>";
         }
         header("Location: ../visão/exibirJoga.php");
     }
