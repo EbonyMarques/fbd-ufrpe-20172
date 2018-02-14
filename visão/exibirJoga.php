@@ -13,7 +13,6 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
   <link rel="stylesheet" href="../css/main.css">
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -105,6 +104,13 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
   </div>
 </div>
 <!-- fimModal -->
+
+<script>
+    var tipo = '<?php echo $_SESSION['alertaTipo']; ?>';
+    var mensagem = '<?php echo $_SESSION['alertaMensagem']; ?>';
+    <?php unset($_SESSION['alertaTipo']);unset($_SESSION['alertaMensagem']); ?>
+</script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

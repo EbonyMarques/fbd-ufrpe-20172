@@ -24,18 +24,28 @@
         }
     }
     function cadastro($valor) {
-        $resultado = cadastrar($valor["cod_patrocinador"], $valor["nome"]);
+        $permissao = cadastrar($valor["cod_patrocinador"], $valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinio.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirPatrocinio.php');
     }
     function exclusao($valor) {
-        $resultado = excluir($valor["cod_patrocinador"], $valor["nome"]);
+        $permissao = excluir($valor["cod_patrocinador"], $valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPatrocinio.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirPatrocinio.php');
     }
 
 ?>

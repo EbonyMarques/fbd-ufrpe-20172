@@ -43,25 +43,40 @@
 
     }
     function cadastro($valor) {
-        $resultado = cadastrar($valor["nome"], $valor["cod_diretor"]);
+        $permissao = cadastrar($valor["nome"], $valor["cod_diretor"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeProfissional.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeProfissional.php');
     }
     function atualizacao($valor) {
-        $resultado = atualizar($valor["nome"], $valor["cod_diretor"]);
+        $permissao = atualizar($valor["nome"], $valor["cod_diretor"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeProfissional.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeProfissional.php');
     }
     function exclusao($valor) {
-        $resultado = excluir($valor["nome"]);
+        $permissao = excluir($valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeProfissional.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeProfissional.php');
     }
 
 ?>

@@ -51,25 +51,40 @@
     function cadastro($valor) {
         $permissao = cadastrar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
 
-        if ($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirPartida.php');
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['nome_time_casa'],$valor['nome_time_fora'],$valor['placar'],$valor['local'],$valor['data'],$valor['rg']);
 
-        if ($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirPartida.php');
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["nome_time_casa"], $valor["nome_time_fora"]);
+        $permissao = excluir($valor["nome_time_casa"], $valor["nome_time_fora"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirPartida.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirPartida.php');
     }
 
 ?>

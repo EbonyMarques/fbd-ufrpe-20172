@@ -48,27 +48,42 @@
     }
 
     function cadastro($valor){
-        $resultado = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
+        $permissao = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirUniforme.php');
     }
 
     function atualizacao($valor) {
-        $resultado = atualizar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
+        $permissao = atualizar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirUniforme.php');
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["cod_uniforme"]);
+        $permissao = excluir($valor["cod_uniforme"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirUniforme.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirUniforme.php');
     }
 
 ?>

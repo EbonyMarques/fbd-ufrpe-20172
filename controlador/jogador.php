@@ -48,23 +48,38 @@
         $permissao = cadastrar($valor['cpf'],$valor['nome']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJogador.php');
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['cpf'],$valor['nome']);
 
-        if ($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJogador.php');
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["cpf"]);
+        $permissao = excluir($valor["cpf"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJogador.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJogador.php');
     }
 ?>

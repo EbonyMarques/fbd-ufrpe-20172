@@ -45,27 +45,42 @@
     }
 
     function cadastro($valor) {
-        $resultado = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
+        $permissao = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeAmador.php');
     }
 
     function atualizacao($valor) {
-        $resultado = atualizar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
+        $permissao = atualizar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeAmador.php');
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["nome"]);
+        $permissao = excluir($valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirTimeAmador.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirTimeAmador.php');
     }
 
 ?>

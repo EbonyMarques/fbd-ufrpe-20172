@@ -52,24 +52,39 @@
         $permissao = cadastrar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJoga.php');
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['cpf_jogador'],$valor['nome_time'],$valor['posicao'],$valor['data_inicio'],$valor['data_final']);
 
-        if ($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJoga.php');
     }
 
     function exclusao($valor) {
-        $resultado = excluir($valor["cpf_jogador"],$valor["nome"]);
+        $permissao = excluir($valor["cpf_jogador"],$valor["nome"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirJoga.php'>";
+        if($permissao){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirJoga.php');
     }
 
 ?>

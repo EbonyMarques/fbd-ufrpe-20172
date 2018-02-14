@@ -48,24 +48,39 @@
         $permissao = cadastrar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirCor.php');
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['cod_cor'],$valor['tonalidade'],$valor['descricao']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirCor.php');
     }
 
     function exclusao($valor) {
         $resultado = excluir($valor["cod_cor"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirCor.php'>";
+        if($resultado){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirCor.php');
     }
 
 ?>

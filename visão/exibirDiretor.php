@@ -99,5 +99,12 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/diretor.php";
 </div>
 <!-- fimModal -->
 
+<script>
+    var tipo = '<?php echo $_SESSION['alertaTipo']; ?>';
+    var mensagem = '<?php echo $_SESSION['alertaMensagem']; ?>';
+    <?php unset($_SESSION['alertaTipo']);unset($_SESSION['alertaMensagem']); ?>
+</script>
+<script src="../js/script.js"></script>
+
 </body>
 </html>

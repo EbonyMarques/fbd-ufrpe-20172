@@ -48,24 +48,39 @@
         $permissao = cadastrar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirDiretor.php');
     }
 
     function atualizacao($valor) {
         $permissao = atualizar($valor['cod_diretor'],$valor['nome'],$valor['sobrenome']);
 
         if($permissao){
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirDiretor.php');
     }
 
     function exclusao($valor) {
         $resultado = excluir($valor["cod_diretor"]);
 
-        if ($resultado) {
-            echo "<meta http-equiv='refresh' content='0; url=../visão/exibirDiretor.php'>";
+        if($resultado){
+            $_SESSION['alertaTipo'] = 'success';
+            $_SESSION['alertaMensagem'] = '<b>Sucesso!</b> Usuário inserido com sucesso';
+        } else {
+            $_SESSION['alertaTipo'] = 'error';
+            $_SESSION['alertaMensagem'] = '<b>Erro!</b> Ocorreu um erro ao inserir usuário';
         }
+        header('Location: ../visão/exibirDiretor.php');
     }
 
 ?>
