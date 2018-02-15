@@ -4,10 +4,10 @@
     function cadastrar($cpf, $nome) {
         $conexao = conectar();
         $sql = "INSERT INTO jogador values ('$cpf', '$nome')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -38,18 +38,18 @@
     function atualizar($cpf, $nome) {
         $conexao = conectar();
         $sql = "UPDATE jogador SET nome='$nome' WHERE cpf='$cpf'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($cpf) {
         $conexao = conectar();
         $sql = "DELETE FROM jogador WHERE cpf='$cpf'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };
 

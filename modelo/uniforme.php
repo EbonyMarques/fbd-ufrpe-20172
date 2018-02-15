@@ -4,10 +4,10 @@
     function cadastrar($cod_uniforme, $descricao, $cod_cor, $tipo_titular_reserva, $nome) {
         $conexao = conectar();
         $sql = "INSERT INTO uniforme values ('$cod_uniforme', '$descricao', '$cod_cor', '$tipo_titular_reserva', '$nome')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -38,17 +38,17 @@
     function atualizar($cod_uniforme, $descricao, $cod_cor, $tipo_titular_reserva, $nome) {
         $conexao = conectar();
         $sql = "UPDATE uniforme SET descricao='$descricao', cod_cor='$cod_cor', tipo_titular_reserva = '$tipo_titular_reserva', nome='$nome' WHERE cod_uniforme='$cod_uniforme'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($cod_uniforme) {
         $conexao = conectar();
         $sql = "DELETE FROM uniforme WHERE cod_uniforme='$cod_uniforme'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };

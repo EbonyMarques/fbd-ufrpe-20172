@@ -4,10 +4,10 @@
     function cadastrar($cod_cor, $tonalidades_cores, $descricao) {
         $conexao = conectar();
         $sql = "INSERT INTO cor values ('$cod_cor', '$tonalidades_cores', '$descricao')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -39,17 +39,17 @@
     function atualizar($cod_cor, $tonalidades_cores, $descricao) {
         $conexao = conectar();
         $sql = "UPDATE cor SET tonalidades_cores='$tonalidades_cores', descricao='$descricao' WHERE cod_cor='$cod_cor'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($cod_cor) {
         $conexao = conectar();
         $sql = "DELETE FROM cor WHERE cod_cor='$cod_cor'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };

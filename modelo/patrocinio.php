@@ -4,10 +4,10 @@
     function cadastrar($cod_patrocinador, $nome) {
         $conexao = conectar();
         $sql = "INSERT INTO patrocinio values ('$cod_patrocinador', '$nome')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -23,8 +23,8 @@
     function excluir($cod_patrocinador,$nome) {
         $conexao = conectar();
         $sql = "DELETE FROM patrocinio WHERE cod_patrocinador='$cod_patrocinador' AND nome='$nome'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };

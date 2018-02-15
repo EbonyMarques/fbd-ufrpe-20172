@@ -4,10 +4,10 @@
     function cadastrar($rg_arbitro, $nome, $tipo_habilitacao) {
         $conexao = conectar();
         $sql = "INSERT INTO arbitro_principal values ('$rg_arbitro', '$nome', '$tipo_habilitacao')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -38,17 +38,17 @@
 function atualizar($rg_arbitro, $nome, $tipo_habilitacao) {
         $conexao = conectar();
         $sql = "UPDATE arbitro_principal SET nome='$nome', tipo_habilitacao='$tipo_habilitacao' WHERE rg_arbitro='$rg_arbitro'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($rg_arbitro) {
         $conexao = conectar();
         $sql = "DELETE FROM arbitro_principal WHERE rg_arbitro='$rg_arbitro'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };

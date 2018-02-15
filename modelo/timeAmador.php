@@ -4,10 +4,10 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/infraestrutura\auxiliar.php";
 function cadastrar($nome, $cidade_origem, $ano_criacao) {
     $conexao = conectar();
     $sql = "INSERT INTO time_amador values ('$nome', '$cidade_origem', '$ano_criacao')";
-    $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+    $execucao = mysqli_query($conexao, $sql) or false;
     desconectar($conexao);
 
-    return true;
+    return $execucao;
 }
 
 function ler() {
@@ -38,17 +38,17 @@ function lerEspecifico($nome) {
 function atualizar($nome, $cidade_origem, $ano_criacao) {
     $conexao = conectar();
     $sql = "UPDATE time_amador SET cidade_origem='$cidade_origem', ano_criacao='$ano_criacao' WHERE nome='$nome'";
-    $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+    $execucao = mysqli_query($conexao, $sql) or false;
     desconectar($conexao);
 
-    return true;
+    return $execucao;
 }
 
 function excluir($nome) {
     $conexao = conectar();
     $sql = "DELETE FROM time_amador WHERE nome='$nome'";
-    $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+    $execucao = mysqli_query($conexao, $sql) or false;
     desconectar($conexao);
 
-    return true;
+    return $execucao;
 };

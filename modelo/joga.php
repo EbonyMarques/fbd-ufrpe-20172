@@ -4,10 +4,10 @@
     function cadastrar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();
         $sql = "INSERT INTO joga values ('$cpf_jogador', '$nome', '$posicao', '$data_inicio', '$data_fim')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -37,17 +37,17 @@
     function atualizar($cpf_jogador, $nome, $posicao, $data_inicio, $data_fim) {
         $conexao = conectar();
         $sql = "UPDATE joga SET posicao='$posicao', data_inicio='$data_inicio', data_fim='$data_fim' WHERE cpf_jogador='$cpf_jogador'AND nome='$nome'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($cpf_jogador,$nome) {
         $conexao = conectar();
         $sql = "DELETE FROM joga WHERE cpf_jogador='$cpf_jogador' AND nome='$nome' ";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };

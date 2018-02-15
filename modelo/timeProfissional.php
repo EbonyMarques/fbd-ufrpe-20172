@@ -4,10 +4,10 @@
     function cadastrar($nome, $cod_diretor) {
         $conexao = conectar();
         $sql = "INSERT INTO time_profissional values ('$nome', '$cod_diretor')";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de cadastro!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function ler() {
@@ -38,17 +38,17 @@
     function atualizar($nome, $cod_diretor) {
         $conexao = conectar();
         $sql = "UPDATE time_profissional SET cod_diretor='$cod_diretor' WHERE nome='$nome'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de atualização!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     }
 
     function excluir($nome) {
         $conexao = conectar();
         $sql = "DELETE FROM time_profissional WHERE nome='$nome'";
-        $execucao = mysqli_query($conexao, $sql) or die("Erro de exclusão!");
+        $execucao = mysqli_query($conexao, $sql) or false;
         desconectar($conexao);
 
-        return true;
+        return $execucao;
     };
