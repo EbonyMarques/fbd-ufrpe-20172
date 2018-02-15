@@ -50,7 +50,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar patrocinador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar patrocinador!</b>";
         }
         header("Location: ../visão/exibirPatrocinador.php");
@@ -62,7 +62,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar patrocinador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar patrocinador!</b>";
         }
         header("Location: ../visão/exibirPatrocinador.php");
@@ -74,7 +74,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir patrocinador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao excluir patrocinador!</b>";
         }
         header("Location: ../visão/exibirPatrocinador.php");

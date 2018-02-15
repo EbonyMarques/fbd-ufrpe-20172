@@ -51,7 +51,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar cor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar cor!</b>";
         }
         header("Location: ../visão/exibirCor.php");
@@ -64,7 +64,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar cor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar!</b>";
         }
         header("Location: ../visão/exibirCor.php");
@@ -77,7 +77,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir cor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao excluir cor!</b>";
         }
         header("Location: ../visão/exibirCor.php");

@@ -51,7 +51,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar jogador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar jogador!</b>";
         }
         header("Location: ../visão/exibirJogador.php");
@@ -64,7 +64,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar jogador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar jogador!</b>";
         }
         header("Location: ../visão/exibirJogador.php");
@@ -77,7 +77,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir jogador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao excluir jogador!</b>";
         }
         header("Location: ../visão/exibirJogador.php");

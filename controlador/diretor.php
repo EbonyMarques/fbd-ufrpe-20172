@@ -51,7 +51,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar diretor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar diretor!</b>";
         }
         header("Location: ../visão/exibirDiretor.php");
@@ -64,7 +64,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar diretor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar diretor!</b>";
         }
         header("Location: ../visão/exibirDiretor.php");
@@ -77,7 +77,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir diretor!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao excluir diretor!</b>";
         }
         header("Location: ../visão/exibirDiretor.php");

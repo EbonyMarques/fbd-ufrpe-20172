@@ -51,7 +51,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao cadastrar o time amador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao cadastrar o time amador!</b>";
         }
         header("Location: ../visão/exibirTimeAmador.php");
@@ -64,7 +64,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao atualizar o time amador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao atualizar o time amador!</b>";
         }
         header("Location: ../visão/exibirTimeAmador.php");
@@ -77,7 +77,7 @@
             $_SESSION["alertaTipo"] = "success";
             $_SESSION["alertaMensagem"] = "<b>Sucesso ao excluir o time amador!</b>";
         } else {
-            $_SESSION["alertaTipo"] = "error";
+            $_SESSION["alertaTipo"] = "danger";
             $_SESSION["alertaMensagem"] = "<b>Erro ao excluir o time amador!</b>";
         }
         header("Location: ../visão/exibirTimeAmador.php");
