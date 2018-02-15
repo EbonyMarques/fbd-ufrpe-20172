@@ -11,7 +11,7 @@
             $dados = array(
                 "rg" => $_POST["rg"],
                 "nome" => $_POST["nome"],
-                "habilitacao" => $_POST["tipo_habilitacao"]);
+                "habilitacao" => $_POST["habilitacao"]);
 
             if ($_POST["acao"]=="cadastrar"){
                 cadastro($dados);
