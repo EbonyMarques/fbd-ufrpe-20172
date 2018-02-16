@@ -37,15 +37,15 @@
         <form action="/fbd/controlador/timeAmador.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome">
+                <input type="text" required class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="cidade_origem">Cidade de origem:</label>
-                <input type="text" class="form-control" name="cidade_origem">
+                <input type="text" required class="form-control" name="cidade_origem">
             </div>
             <div class="form-group">
                 <label for="ano_criacao">Ano de criação:</label>
-                <input type="text" class="form-control" name="ano_criacao">
+                <input type="text" required class="form-control" name="ano_criacao">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

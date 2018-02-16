@@ -37,11 +37,11 @@
         <form action="/fbd/controlador/jogador.php" method="post">
             <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" name="cpf">
+                <input type="text" required class="form-control" name="cpf">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome">
+                <input type="text" required class="form-control" name="nome">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

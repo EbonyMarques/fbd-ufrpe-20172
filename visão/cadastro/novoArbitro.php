@@ -37,15 +37,15 @@
         <form action="/fbd/controlador/arbitroPrincipal.php" method="post">
             <div class="form-group">
                 <label for="rg">RG:</label>
-                <input type="text" class="form-control" name="rg">
+                <input type="text" required class="form-control" name="rg">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome">
+                <input type="text" required class="form-control" name="nome">
             </div>
             <div class="form-group">
                 <label for="habilitacao">Tipo de habilitação:</label>
-                <input type="text" class="form-control" name="habilitacao">
+                <input type="text" required class="form-control" name="habilitacao">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

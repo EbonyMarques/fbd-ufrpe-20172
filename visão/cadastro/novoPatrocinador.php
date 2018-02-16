@@ -37,11 +37,11 @@
         <form action="/fbd/controlador/patrocinador.php" method="post">
             <div class="form-group">
                 <label for="cod_patrocinador">Código:</label>
-                <input type="text" class="form-control" name="cod_patrocinador">
+                <input type="text" required class="form-control" name="cod_patrocinador">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome">
+                <input type="text" required class="form-control" name="nome">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

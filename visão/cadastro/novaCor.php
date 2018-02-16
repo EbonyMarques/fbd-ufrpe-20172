@@ -37,15 +37,15 @@
         <form action="/fbd/controlador/cor.php" method="post">
             <div class="form-group">
                 <label for="cod_cor">Cor:</label>
-                <input type="text" class="form-control" name="cod_cor">
+                <input type="text" required class="form-control" name="cod_cor">
             </div>
             <div class="form-group">
                 <label for="tonalidade">Tonalidade:</label>
-                <input type="text" class="form-control" name="tonalidade">
+                <input type="text" required class="form-control" name="tonalidade">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
-                <input type="text" class="form-control" name="descricao">
+                <input type="text" required class="form-control" name="descricao">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
