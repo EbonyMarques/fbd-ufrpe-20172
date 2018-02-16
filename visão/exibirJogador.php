@@ -51,21 +51,26 @@
     </thead>
     <tbody>
     <?php
-        foreach (exibeDados() as $valor) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='3'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
             echo "<tr>
-                    <td>".$valor["cpf"]."</td>
-                    <td>".$valor["nome"]."</td>
+                    <td>".$value["cpf"]."</td>
+                    <td>".$value["nome"]."</td>
                     <td>
                         <div class='dropdown'>
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li id='dados'><a href='atualizar/atualizarJogador.php?".$valor["cpf"]."'>Atualizar</a></li>
+                            <li id='dados'><a href='atualizar/atualizarJogador.php?".$value["cpf"]."'>Atualizar</a></li>
                             <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>
                     </td>
                   </tr>";
+              }
         }
     ?>
     </tbody>

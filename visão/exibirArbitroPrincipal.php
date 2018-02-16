@@ -52,22 +52,27 @@ require "../controlador/arbitroPrincipal.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
-        echo "<tr>
-                    <td>".$value["rg_arbitro"]."</td>
-                    <td>".$value["nome"]."</td>
-                    <td>".$value["tipo_habilitacao"]."</td>
-                    <td>
-                        <div class='dropdown'>
-                          <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
-                          <i class='fa fa-ellipsis-v fa-lg'></i></button>
-                          <ul class='dropdown-menu'>
-                            <li id='dados'><a href='atualizar/atualizarArbitroPrincipal.php?".$value["rg_arbitro"]."'>Editar</a></li>
-                            <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
-                          </ul>
-                        </div>
-                    </td>
-              </tr>";
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='4'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
+            echo "<tr>
+            <td>".$value["rg_arbitro"]."</td>
+            <td>".$value["nome"]."</td>
+            <td>".$value["tipo_habilitacao"]."</td>
+            <td>
+            <div class='dropdown'>
+                <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
+                <i class='fa fa-ellipsis-v fa-lg'></i></button>
+                <ul class='dropdown-menu'>
+                    <li id='dados'><a href='atualizar/atualizarArbitroPrincipal.php?".$value["rg_arbitro"]."'>Editar</a></li>
+                    <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
+                </ul>
+            </div>
+            </td>
+            </tr>";
+        }
     }
     ?>
     </tbody>

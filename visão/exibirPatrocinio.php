@@ -50,7 +50,11 @@ require "../controlador/patrocinio.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='3'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["cod_patrocinador"]."</td>
                     <td>".$value["nome"]."</td>
@@ -59,12 +63,13 @@ require "../controlador/patrocinio.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li id='dados' class='hidden'><a href='t.php?".$value["cod_patrocinador"]."?".$value["nome"]."'>Editar</a></li>                          
+                            <li id='dados' class='hidden'><a href='t.php?".$value["cod_patrocinador"]."?".$value["nome"]."'>Editar</a></li>
                             <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>

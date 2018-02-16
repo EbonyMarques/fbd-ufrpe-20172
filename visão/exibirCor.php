@@ -51,7 +51,11 @@ require "../controlador/cor.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='4'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["cod_cor"]."</td>
                     <td>".$value["tonalidades_cores"]."</td>
@@ -67,6 +71,7 @@ require "../controlador/cor.php";
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>

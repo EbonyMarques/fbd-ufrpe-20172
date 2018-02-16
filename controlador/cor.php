@@ -27,8 +27,8 @@
     function exibeDados(){
         $resultado = ler();
 
-        if ($resultado) {
-            return $resultado;
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
         } else {
             return false;
         }

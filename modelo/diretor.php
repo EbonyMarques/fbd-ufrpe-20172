@@ -15,9 +15,13 @@
         $sql = "SELECT * FROM diretor";
         $resultado = mysqli_query($conexao, $sql);
         desconectar($conexao);
+        
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
 
-        return $resultado;
-
+        return $arr;
     };
 
     function lerEspecifico($cod_diretor) {

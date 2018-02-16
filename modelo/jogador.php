@@ -16,8 +16,12 @@
         $resultado = mysqli_query($conexao, $sql);
         desconectar($conexao);
 
-        return $resultado;
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
 
+        return $arr;
     };
 
     function lerEspecifico($cpf) {
@@ -52,4 +56,3 @@
 
         return $execucao;
     };
-

@@ -50,7 +50,11 @@ require "../controlador/timeProfissional.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='3'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["nome"]."</td>
                     <td>".$value["cod_diretor"]."</td>
@@ -65,6 +69,7 @@ require "../controlador/timeProfissional.php";
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>

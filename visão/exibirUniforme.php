@@ -53,7 +53,11 @@ require "../controlador/uniforme.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='3'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["cod_uniforme"]."</td>
                     <td>".$value["cod_cor"]."</td>
@@ -71,6 +75,7 @@ require "../controlador/uniforme.php";
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>

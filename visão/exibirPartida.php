@@ -55,7 +55,11 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='7'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["nome_time_casa"]."</td>
                     <td>".$value["nome_time_fora"]."</td>
@@ -74,6 +78,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>

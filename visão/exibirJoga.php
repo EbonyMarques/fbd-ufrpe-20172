@@ -54,7 +54,11 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
     </thead>
     <tbody>
     <?php
-    foreach (exibeDados() as $value) {
+    $dados = exibeDados();
+    if (!$dados) {
+        echo "<tr><td class='text-center' colspan='6'>Nenhum registro</td></tr>";
+    } else {
+        foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["cpf_jogador"]."</td>
                     <td>".$value["nome"]."</td>
@@ -72,6 +76,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
                         </div>
                     </td>
               </tr>";
+          }
     }
     ?>
     </tbody>
