@@ -69,18 +69,18 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"posicao\">Posição:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"posicao\" value=\"$posicao\">
+                            <input type=\"text\" required class=\"form-control\" name=\"posicao\" value=\"$posicao\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"data_inicio\">Data de início:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"data_inicio\" value=\"$data_inicio\">
+                            <input type=\"text\" required class=\"form-control\" name=\"data_inicio\" value=\"$data_inicio\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"data_final\">Data final:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"data_final\" value=\"$data_fim\">
+                            <input type=\"text\" required class=\"form-control\" name=\"data_final\" value=\"$data_fim\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

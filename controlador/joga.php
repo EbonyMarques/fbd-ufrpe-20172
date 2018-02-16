@@ -48,6 +48,26 @@
 
     }
 
+    function jogadoresDisponiveis(){
+        $resultado = lerJogadores();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
+    function timesDisponiveis(){
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor["cpf_jogador"],$valor["nome_time"],$valor["posicao"],$valor["data_inicio"],$valor["data_final"]);
 

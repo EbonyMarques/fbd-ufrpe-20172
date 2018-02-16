@@ -62,14 +62,14 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/arbitroPrincipal.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <input type=\"text\" required class=\"form-control\" name=\"nome\" value=\"$nome\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo_habilitacao\">Tipo de habilitação:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"tipo_habilitacao\" value=\"$tipo_habilitacao\">
+                            <input type=\"text\" required class=\"form-control\" name=\"tipo_habilitacao\" value=\"$tipo_habilitacao\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

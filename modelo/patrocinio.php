@@ -24,6 +24,34 @@
         return $arr;
     };
 
+    function lerTimes() {
+        $conexao = conectar();
+        $sql = "SELECT nome FROM time";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+    };
+
+    function lerPatrocinadores() {
+        $conexao = conectar();
+        $sql = "SELECT cod_patrocinador FROM patrocinador";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+    };
+
     function excluir($cod_patrocinador,$nome) {
         $conexao = conectar();
         $sql = "DELETE FROM patrocinio WHERE cod_patrocinador='$cod_patrocinador' AND nome='$nome'";

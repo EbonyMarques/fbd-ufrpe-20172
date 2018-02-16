@@ -70,22 +70,22 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"placar\">Placar:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"placar\" value='$placar'>
+                            <input type=\"text\" required class=\"form-control\" name=\"placar\" value='$placar'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"local\">Local:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"local\" value='$local'>
+                            <input type=\"text\" required class=\"form-control\" name=\"local\" value='$local'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"data\">Data:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"data\" value='$data'>
+                            <input type=\"text\" required class=\"form-control\" name=\"data\" value='$data'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"rg\">RG do árbitro:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"rg\" value='$rg_arbitro'>
+                            <input type=\"text\" required class=\"form-control\" name=\"rg\" value='$rg_arbitro'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

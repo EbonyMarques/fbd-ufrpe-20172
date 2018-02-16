@@ -43,6 +43,27 @@
         }
 
     }
+
+    function timesDisponiveis(){
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
+    function diretoresDisponiveis(){
+        $resultado = lerDiretores();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor["nome"], $valor["cod_diretor"]);
 

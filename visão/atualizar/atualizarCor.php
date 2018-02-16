@@ -61,14 +61,14 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tonalidade\">Tonalidade:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"tonalidade\" value=\"$tonalidade\">
+                            <input type=\"text\" required class=\"form-control\" name=\"tonalidade\" value=\"$tonalidade\">
                         </div>
                         <div class=\"form-group\">
                             <label for=\"descricao\">Descrição:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"descricao\" value=\"$descricao\">
+                            <input type=\"text\" required class=\"form-control\" name=\"descricao\" value=\"$descricao\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

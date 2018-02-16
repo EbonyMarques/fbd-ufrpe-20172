@@ -22,7 +22,7 @@
         );
 
         return $arr;
-    };
+    }
 
     function lerEspecifico($nome_time_casa, $nome_time_fora) {
         $conexao = conectar();
@@ -37,6 +37,36 @@
         }
 
         return $array;
+    }
+
+    function lerTimes() {
+        $conexao = conectar();
+        $sql = "SELECT nome FROM time";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+
+    }
+
+    function lerArbitros() {
+        $conexao = conectar();
+        $sql = "SELECT rg_arbitro FROM arbitro_principal";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+
     }
 
     function atualizar($nome_time_casa, $nome_time_fora, $placar, $local, $data, $rg_arbitro) {
@@ -55,4 +85,4 @@
         desconectar($conexao);
 
         return $execucao;
-    };
+    }

@@ -60,10 +60,10 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value=\"$nome\">
+                            <input type=\"text\" required class=\"form-control\" name=\"nome\" value=\"$nome\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

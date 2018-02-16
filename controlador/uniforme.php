@@ -47,6 +47,26 @@
 
     }
 
+    function timesDisponiveis(){
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
+    function coresDisponiveis(){
+        $resultado = lerCores();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor){
         $permissao = cadastrar($valor["cod_uniforme"], $valor["descricao"], $valor["cod_cor"], $valor["tipo_titular_reserva"], $valor["nome"]);
 

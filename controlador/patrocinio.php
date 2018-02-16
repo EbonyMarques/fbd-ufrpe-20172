@@ -23,6 +23,26 @@
             return false;
         }
     }
+
+    function timesDisponiveis(){
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
+    function patrocinadoresDisponiveis(){
+        $resultado = lerPatrocinadores();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
     
     function cadastro($valor) {
         $permissao = cadastrar($valor["cod_patrocinador"], $valor["nome"]);

@@ -45,6 +45,16 @@
 
     }
 
+    function timesDisponiveis(){
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor["nome"], $valor["cidade_origem"], $valor["ano_criacao"]);
 

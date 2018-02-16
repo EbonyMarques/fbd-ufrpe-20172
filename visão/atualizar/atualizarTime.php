@@ -60,10 +60,10 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo\">Tipo:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"tipo\" value='$tipo'>
+                            <input type=\"text\" required class=\"form-control\" name=\"tipo\" value='$tipo'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>";
         }

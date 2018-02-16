@@ -48,6 +48,26 @@
         }
     }
 
+    function timesDisponiveis() {
+        $resultado = lerTimes();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
+    function arbitrosDisponiveis() {
+        $resultado = lerArbitros();
+
+        if ($resultado['total'] > 0) {
+            return $resultado['dados'];
+        } else {
+            return false;
+        }
+    }
+
     function cadastro($valor) {
         $permissao = cadastrar($valor["nome_time_casa"],$valor["nome_time_fora"],$valor["placar"],$valor["local"],$valor["data"],$valor["rg"]);
 

@@ -22,7 +22,7 @@ function ler() {
     );
 
     return $arr;
-};
+}
 
 function lerEspecifico($nome) {
     $conexao = conectar();
@@ -37,6 +37,20 @@ function lerEspecifico($nome) {
     }
 
     return $array;
+}
+
+function lerTimes() {
+    $conexao = conectar();
+    $sql = "SELECT nome FROM times";
+    $resultado = mysqli_query($conexao, $sql);
+    desconectar($conexao);
+
+    $arr = array(
+        'dados' => $resultado,
+        'total' => mysqli_num_rows($resultado)
+    );
+
+    return $arr;
 }
 
 function atualizar($nome, $cidade_origem, $ano_criacao) {
@@ -55,4 +69,4 @@ function excluir($nome) {
     desconectar($conexao);
 
     return $execucao;
-};
+}

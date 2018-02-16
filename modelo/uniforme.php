@@ -39,6 +39,34 @@
         return $array;
     }
 
+    function lerTimes() {
+        $conexao = conectar();
+        $sql = "SELECT nome FROM time";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+    };
+
+    function lerCores() {
+        $conexao = conectar();
+        $sql = "SELECT cod_cor FROM cor";
+        $resultado = mysqli_query($conexao, $sql);
+        desconectar($conexao);
+
+        $arr = array(
+            'dados' => $resultado,
+            'total' => mysqli_num_rows($resultado)
+        );
+
+        return $arr;
+    };
+
     function atualizar($cod_uniforme, $descricao, $cod_cor, $tipo_titular_reserva, $nome) {
         $conexao = conectar();
         $sql = "UPDATE uniforme SET descricao='$descricao', cod_cor='$cod_cor', tipo_titular_reserva = '$tipo_titular_reserva', nome='$nome' WHERE cod_uniforme='$cod_uniforme'";

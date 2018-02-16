@@ -63,22 +63,22 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"cod_cor\">Código da cor:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"cod_cor\" value='$cod_cor'>
+                            <input type=\"text\" required class=\"form-control\" name=\"cod_cor\" value='$cod_cor'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome do time:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"nome\" value='$nome'>
+                            <input type=\"text\" required class=\"form-control\" name=\"nome\" value='$nome'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo_titular_reserva\">Tipo de uniforme:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"tipo_titular_reserva\" value='$tipo_titular_reserva'>
+                            <input type=\"text\" required class=\"form-control\" name=\"tipo_titular_reserva\" value='$tipo_titular_reserva'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"descricao\">Descrição:</label>
-                            <input type=\"text\" class=\"form-control\" name=\"descricao\" value='$descricao'>
+                            <input type=\"text\" required class=\"form-control\" name=\"descricao\" value='$descricao'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
-                        <button type=\"submit\" class=\"btn btn-success\">Atualizar</button>
+                        <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
                     </form>
                 </div>
             ";
