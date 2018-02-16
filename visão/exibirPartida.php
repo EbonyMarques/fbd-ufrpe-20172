@@ -66,7 +66,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                     <td>".$value["placar"]."</td>
                     <td>".$value["local"]."</td>
                     <td>".$value["data"]."</td>
-                    <td>".$value["rg_arbitro"]."</td>
+                    <td>".corrigeNulo($value["rg_arbitro"])."</td>
                     <td>
                         <div class='dropdown'>
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>

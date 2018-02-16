@@ -60,7 +60,7 @@ require "../controlador/uniforme.php";
         foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["cod_uniforme"]."</td>
-                    <td>".$value["cod_cor"]."</td>
+                    <td>".corrigeNulo($value["cod_cor"])."</td>
                     <td>".$value["nome"]."</td>
                     <td>".$value["descricao"]."</td>
                     <td>".$value["tipo_titular_reserva"]."</td>

@@ -57,7 +57,7 @@ require "../controlador/timeProfissional.php";
         foreach ($dados as $value) {
         echo "<tr>
                     <td>".$value["nome"]."</td>
-                    <td>".$value["cod_diretor"]."</td>
+                    <td>".corrigeNulo($value["cod_diretor"])."</td>
                     <td>
                         <div class='dropdown'>
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>

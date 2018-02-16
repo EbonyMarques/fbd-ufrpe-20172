@@ -12,3 +12,7 @@
     function desconectar($conexao) {
         mysqli_close($conexao);
     }
+
+    function corrigeNulo($str) {
+        return ($str) ? $str : '—';
+    }
