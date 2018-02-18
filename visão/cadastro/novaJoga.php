@@ -1,3 +1,6 @@
+<?php
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +40,33 @@
         <form action="/fbd/controlador/joga.php" method="post">
             <div class="form-group">
                 <label for="cpf_jogador">CPF do jogador:</label>
-                <input type="text" required class="form-control" name="cpf_jogador">
+                <select name="cpf_jogador" class="form-control">
+                    <?php
+                    $dados = jogadoresDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["cpf"]."'>".$value["cpf"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="nome_time">Nome do time:</label>
-                <input type="text" required class="form-control" name="nome_time">
+                <select name="nome_time" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="posicao">Posição do jogador:</label>

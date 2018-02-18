@@ -41,7 +41,7 @@ function lerEspecifico($nome) {
 
 function lerTimes() {
     $conexao = conectar();
-    $sql = "SELECT nome FROM times";
+    $sql = "SELECT nome FROM time";
     $resultado = mysqli_query($conexao, $sql);
     desconectar($conexao);
 

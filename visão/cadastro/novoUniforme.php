@@ -1,3 +1,6 @@
+<?php
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/uniforme.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -41,11 +44,33 @@
             </div>
             <div class="form-group">
                 <label for="cod_cor">Código da cor:</label>
-                <input type="text" required class="form-control" name="cod_cor">
+                <select name="cod_cor" class="form-control">
+                    <?php
+                    $dados = coresDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["cod_cor"]."'>".$value["cod_cor"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="nome">Nome do time:</label>
-                <input type="text" required class="form-control" name="nome">
+                <select name="nome" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="tipo_titular_reserva">Tipo de uniforme:</label>
@@ -62,3 +87,5 @@
 
 </body>
 </html>
+}
+

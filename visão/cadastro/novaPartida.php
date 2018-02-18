@@ -1,3 +1,6 @@
+<?php
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +40,33 @@
         <form action="/fbd/controlador/partida.php" method="post">
             <div class="form-group">
                 <label for="nome_time_casa">Nome do time da casa:</label>
-                <input type="text" required class="form-control" name="nome_time_casa">
+                <select name="nome_time_casa" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="nome_time_fora">Nome do time de fora:</label>
-                <input type="text" required class="form-control" name="nome_time_fora">
+                <select name="nome_time_fora" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="placar">Placar:</label>
@@ -57,7 +82,18 @@
             </div>
             <div class="form-group">
                 <label for="rg">RG do árbitro:</label>
-                <input type="text" required class="form-control" name="rg">
+                <select name="rg" class="form-control">
+                    <?php
+                    $dados = arbitrosDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["rg_arbitro"]."'>".$value["rg_arbitro"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

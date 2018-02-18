@@ -1,3 +1,6 @@
+<?php
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/timeProfissional.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +40,33 @@
         <form action="/fbd/controlador/timeProfissional.php" method="post">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" required class="form-control" name="nome">
+                <select name="nome" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="cod_diretor">Código do diretor:</label>
-                <input type="text" required class="form-control" name="cod_diretor">
+                <select name="cod_diretor" class="form-control">
+                    <?php
+                    $dados = diretoresDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["cod_diretor"]."'>".$value["cod_diretor"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

@@ -41,7 +41,10 @@
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo:</label>
-                <input type="text" required class="form-control" name="tipo">
+                <select name="tipo" class="form-control">
+                    <option value="amador">amador</option>
+                    <option value="profissional">profissional</option>
+                </select>
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

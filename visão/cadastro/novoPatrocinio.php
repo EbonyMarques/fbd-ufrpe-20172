@@ -1,3 +1,6 @@
+<?php
+require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/patrocinio.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +40,33 @@
         <form action="/fbd/controlador/patrocinio.php" method="post">
             <div class="form-group">
                 <label for="cod_patrocinador">Código do patrocinador:</label>
-                <input type="text" required class="form-control" name="cod_patrocinador">
+                <select name="cod_patrocinador" class="form-control">
+                    <?php
+                    $dados = patrocinadoresDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["cod_patrocinador"]."'>".$value["cod_patrocinador"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="nome">Nome do time:</label>
-                <input type="text" required class="form-control" name="nome">
+                <select name="nome" class="form-control">
+                    <?php
+                    $dados = timesDisponiveis();
+                    if (!$dados){
+                        echo "<option readonly>Nenhum registro</option>";
+                    } else {
+                        foreach ($dados as $value){
+                            echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
