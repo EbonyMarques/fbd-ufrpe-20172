@@ -79,7 +79,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"data\">Data:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"data\" value='$data'>
+                            <input type=\"date\" required class=\"form-control\" name=\"data\" value='$data'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"rg\">RG do árbitro:</label>

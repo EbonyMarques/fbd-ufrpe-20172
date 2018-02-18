@@ -74,11 +74,11 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
             </div>
             <div class="form-group">
                 <label for="data_inicio">Data de início:</label>
-                <input type="text" required class="form-control" name="data_inicio">
+                <input type="date" required class="form-control" name="data_inicio">
             </div>
             <div class="form-group">
                 <label for="data_final">Data final:</label>
-                <input type="text" required class="form-control" name="data_final">
+                <input type="date" required class="form-control" name="data_final">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>

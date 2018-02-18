@@ -64,7 +64,7 @@
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li id='dados'><a href='atualizar/atualizarJogador.php?".$value["cpf"]."'>Atualizar</a></li>
+                            <li id='dados'><a href='atualizar/atualizarJogador.php?".$value["cpf"]."'>Editar</a></li>
                             <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>

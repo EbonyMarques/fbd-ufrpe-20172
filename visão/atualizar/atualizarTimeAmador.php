@@ -65,7 +65,7 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"ano_criacao\">Ano de criação:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"ano_criacao\" value='$ano_criacao'>
+                            <input type=\"number\" required class=\"form-control\" name=\"ano_criacao\" value='$ano_criacao'>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>

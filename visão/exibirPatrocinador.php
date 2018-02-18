@@ -63,7 +63,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/patrocinador.php";
                           <button class='btn btn-transparent dropdown-toggle' type='button' data-toggle='dropdown'>
                           <i class='fa fa-ellipsis-v fa-lg'></i></button>
                           <ul class='dropdown-menu'>
-                            <li id='dados'><a href='atualizar/atualizarPatrocinador.php?".$value["cod_patrocinador"]."'>Atualizar</a></li>
+                            <li id='dados'><a href='atualizar/atualizarPatrocinador.php?".$value["cod_patrocinador"]."'>Editar</a></li>
                             <li id='excluir'><a href='' data-toggle='modal' data-target='#modal'>Excluir</a></li>
                           </ul>
                         </div>

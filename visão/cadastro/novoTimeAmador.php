@@ -59,7 +59,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/timeAmador.php";
             </div>
             <div class="form-group">
                 <label for="ano_criacao">Ano de criação:</label>
-                <input type="text" required class="form-control" name="ano_criacao">
+                <input type="number" required class="form-control" name="ano_criacao">
             </div>
             <input type="hidden" value="cadastrar" name="acao" />
             <button type="submit" class="btn btn-success">Cadastrar</button>
