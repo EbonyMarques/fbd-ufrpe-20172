@@ -53,6 +53,8 @@
             $descricao = $resultado["descricao"];
             $cod_cor = $resultado["cod_cor"];
             $tipo_titular_reserva = $resultado["tipo_titular_reserva"];
+            $dados1 = coresDisponiveis();
+            $dados2 = timesDisponiveis();
 
             echo "<div class=\"container\">
                     <h2>Atualizar uniforme</h2>
@@ -63,11 +65,35 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"cod_cor\">Código da cor:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"cod_cor\" value='$cod_cor'>
+                            <select name=\"cod_cor\" class=\"form-control\">";
+                            if (!$dados1){
+                                echo "<option readonly>Nenhum registro</option>";
+                            } else {
+                                foreach ($dados1 as $value){
+                                    if ($value["cod_cor"]==$cod_cor){
+                                        echo "<option selected value='".$value["cod_cor"]."' >".$value["cod_cor"]."</option>";
+                                        continue;
+                                    }
+                                    echo "<option value='".$value["cod_cor"]."'>".$value["cod_cor"]."</option>";
+                                }
+                            }echo "
+                            </select>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome do time:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"nome\" value='$nome'>
+                            <select name=\"nome\" class=\"form-control\">";
+                            if (!$dados2){
+                                echo "<option readonly>Nenhum registro</option>";
+                            } else {
+                                foreach ($dados2 as $value){
+                                    if ($value["nome"]==$nome){
+                                        echo "<option selected value='".$value["nome"]."' >".$value["nome"]."</option>";
+                                        continue;
+                                    }
+                                    echo "<option value='".$value["nome"]."'>".$value["nome"]."</option>";
+                                }
+                            }echo "
+                            </select>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo_titular_reserva\">Tipo de uniforme:</label>

@@ -60,7 +60,15 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo\">Tipo:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"tipo\" value='$tipo'>
+                            <select name=\"tipo\" class=\"form-control\">";
+                            if ($tipo == "amador") {
+                                echo "<option selected value=\"amador\">amador</option>
+                                <option value=\"profissional\">profissional</option>";
+                            }else {
+                                echo "<option value=\"amador\">amador</option>
+                                <option selected value=\"profissional\">profissional</option>";
+                            }echo "
+                            </select>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>

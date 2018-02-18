@@ -56,6 +56,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
             $local = $resultado["local"];
             $data = $resultado["data"];
             $rg_arbitro = $resultado["rg_arbitro"];
+            $dados= arbitrosDisponiveis();
 
             echo "<div class=\"container\">
                     <h2>Atualizar partida</h2>
@@ -82,7 +83,19 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"rg\">RG do árbitro:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"rg\" value='$rg_arbitro'>
+                            <select name=\"rg\" class=\"form-control\">";
+                            if (!$dados){
+                                echo "<option readonly>Nenhum registro</option>";
+                            } else {
+                                foreach ($dados as $value){
+                                    if ($value["rg_arbitro"]==$rg_arbitro){
+                                        echo "<option selected value='".$value["rg_arbitro"]."' >".$value["rg_arbitro"]."</option>";
+                                        continue;
+                                    }
+                                    echo "<option value='".$value["rg_arbitro"]."'>".$value["rg_arbitro"]."</option>";
+                                }
+                            }echo "
+                            </select>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>

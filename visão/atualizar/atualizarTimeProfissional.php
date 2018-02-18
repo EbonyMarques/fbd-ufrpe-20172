@@ -50,6 +50,7 @@
             echo "<meta http-equiv='refresh' content='1; url=../visão/exibirTimeProfissional.php'>";
         } else {
             $cod_diretor = $resultado["cod_diretor"];
+            $dados = diretoresDisponiveis();
 
             echo "<div class=\"container\">
                     <h2>Atualizar time profissional</h2>
@@ -60,7 +61,19 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"cod_diretor\">Código do diretor:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"cod_diretor\" value='$cod_diretor'>
+                            <select name=\"cod_diretor\" class=\"form-control\">";
+                            if (!$dados){
+                                echo "<option readonly>Nenhum registro</option>";
+                            } else {
+                                foreach ($dados as $value){
+                                    if ($value["cod_diretor"]==$cod_diretor){
+                                        echo "<option selected value='".$value["cod_diretor"]."' >".$value["cod_diretor"]."</option>";
+                                        continue;
+                                    }
+                                    echo "<option value='".$value["cod_diretor"]."'>".$value["cod_diretor"]."</option>";
+                                }
+                            }echo "
+                            </select>
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
