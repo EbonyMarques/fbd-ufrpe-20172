@@ -54,8 +54,8 @@ INSERT INTO uniforme VALUES("nautico1", "Uniforme titular do Náutico", "ff3d3d"
 INSERT INTO uniforme VALUES("nautico2", "Uniforme reserva do Náutico", "ff3d3d", "reserva", "Clube Náutico Capibaribe");
 INSERT INTO uniforme VALUES("sport1", "Uniforme titular do Sport", "000000", "titular", "Sport Club do Recife");
 INSERT INTO uniforme VALUES("sport2", "Uniforme reserva do Sport", "000000", "reserva", "Sport Club do Recife");
-INSERT INTO uniforme VALUES("bsi1", "Uniforme titular do IS Gunners", "ff0000", "titular", "Artilheiros de BSI");
-INSERT INTO uniforme VALUES("bsi2", "Uniforme reserva do IS Gunners", "ff0000", "titular", "Artilheiros de BSI");
+INSERT INTO uniforme VALUES("bsi1", "Uniforme titular dos Artilheiros de BSI", "ff0000", "titular", "Artilheiros de BSI");
+INSERT INTO uniforme VALUES("bsi2", "Uniforme reserva dos Artilheiros de BSI", "ff0000", "titular", "Artilheiros de BSI");
 
 INSERT INTO partida VALUES("Santa Cruz Futebol Clube", "Sport Club do Recife", "1x1", "Estádio do Arruda", "180212", "891234556");
 INSERT INTO partida VALUES("Clube Náutico Capibaribe", "Artilheiros de BSI", "0x2", "Estádio dos Aflitos", "180212", "128577232");
