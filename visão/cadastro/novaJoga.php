@@ -41,13 +41,14 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
             <div class="form-group">
                 <label for="cpf_jogador">CPF do jogador:</label>
                 <select name="cpf_jogador" class="form-control">
+                    <option value="">Selecione um jogador</option>
                     <?php
                     $dados = jogadoresDisponiveis();
                     if (!$dados){
                         echo "<option readonly>Nenhum registro</option>";
                     } else {
                         foreach ($dados as $value){
-                            echo "<option value='".$value["cpf"]."'>".$value["cpf"]."</option>";
+                            echo "<option value='".$value["cpf"]."'>".mascarar($value["cpf"], 'cpf')."</option>";
                         }
                     }
                     ?>
@@ -56,6 +57,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
             <div class="form-group">
                 <label for="nome_time">Nome do time:</label>
                 <select name="nome_time" class="form-control">
+                    <option value="">Selecione um time</option>
                     <?php
                     $dados = timesDisponiveis();
                     if (!$dados){

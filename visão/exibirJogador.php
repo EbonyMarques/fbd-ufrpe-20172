@@ -57,7 +57,7 @@
     } else {
         foreach ($dados as $value) {
             echo "<tr>
-                    <td>".$value["cpf"]."</td>
+                    <td>".mascarar($value["cpf"], 'cpf')."</td>
                     <td>".$value["nome"]."</td>
                     <td>
                         <div class='dropdown'>

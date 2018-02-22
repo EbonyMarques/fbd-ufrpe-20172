@@ -9,7 +9,7 @@
             exclusao($dados);
         } else {
             $dados = array(
-                "rg" => $_POST["rg"],
+                "rg" => desmascarar($_POST["rg"], 'rg'),
                 "nome" => $_POST["nome"],
                 "habilitacao" => $_POST["habilitacao"]);
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
     <script src="/fbd/js/jquery.min.js"></script>
     <script src="/fbd/js/bootstrap.min.js"></script>
+    <script src="/fbd/js/jquery.mask.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -37,7 +38,7 @@
         <form action="/fbd/controlador/arbitroPrincipal.php" method="post">
             <div class="form-group">
                 <label for="rg">RG:</label>
-                <input type="text" required class="form-control" name="rg">
+                <input type="text" required class="form-control rg" name="rg">
             </div>
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -54,3 +55,6 @@
 
 </body>
 </html>
+<script type="text/javascript">
+    $('.rg').mask('0.000.000', {reverse: true, placeholder: '_.___.___'});
+</script>

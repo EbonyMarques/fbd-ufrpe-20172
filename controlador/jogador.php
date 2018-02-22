@@ -9,7 +9,7 @@
             exclusao($dados);
         } else {
             $dados = array(
-                "cpf" => $_POST["cpf"],
+                "cpf" => desmascarar($_POST["cpf"], 'cpf'),
                 "nome" => $_POST["nome"]
             );
 

@@ -41,6 +41,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/patrocinio.php";
             <div class="form-group">
                 <label for="cod_patrocinador">Código do patrocinador:</label>
                 <select name="cod_patrocinador" class="form-control">
+                    <option value="">Selecione o patrocinador</option>
                     <?php
                     $dados = patrocinadoresDisponiveis();
                     if (!$dados){

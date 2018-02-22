@@ -60,7 +60,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/joga.php";
     } else {
         foreach ($dados as $value) {
         echo "<tr>
-                    <td>".$value["cpf_jogador"]."</td>
+                    <td>".mascarar($value["cpf_jogador"], 'cpf')."</td>
                     <td>".$value["nome"]."</td>
                     <td>".$value["posicao"]."</td>
                     <td>".$value["data_inicio"]."</td>

@@ -10,7 +10,7 @@
             exclusao($dados);
         } else {
             $dados = array(
-                "cpf_jogador" => $_POST["cpf_jogador"],
+                "cpf_jogador" => desmascarar($_POST["cpf_jogador"], 'cpf'),
                 "nome_time" => $_POST["nome_time"],
                 "posicao" => $_POST["posicao"],
                 "data_inicio" => $_POST["data_inicio"],

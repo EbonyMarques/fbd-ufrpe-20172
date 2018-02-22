@@ -58,7 +58,7 @@ require "../controlador/arbitroPrincipal.php";
     } else {
         foreach ($dados as $value) {
             echo "<tr>
-            <td>".$value["rg_arbitro"]."</td>
+            <td>".mascarar($value["rg_arbitro"], 'rg')."</td>
             <td>".$value["nome"]."</td>
             <td>".$value["tipo_habilitacao"]."</td>
             <td>

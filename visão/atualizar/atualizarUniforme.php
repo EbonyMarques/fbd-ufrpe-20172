@@ -65,7 +65,8 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"cod_cor\">Código da cor:</label>
-                            <select name=\"cod_cor\" class=\"form-control\">";
+                            <select name=\"cod_cor\" class=\"form-control\">
+                            <option value=''>Selecione a cor</option>";
                             if (!$dados1){
                                 echo "<option readonly>Nenhum registro</option>";
                             } else {
@@ -81,7 +82,8 @@
                         </div>
                         <div class=\"form-group\">
                             <label for=\"nome\">Nome do time:</label>
-                            <select name=\"nome\" class=\"form-control\">";
+                            <select name=\"nome\" class=\"form-control\">
+                            <option value=''>Selecione o time</option>";
                             if (!$dados2){
                                 echo "<option readonly>Nenhum registro</option>";
                             } else {

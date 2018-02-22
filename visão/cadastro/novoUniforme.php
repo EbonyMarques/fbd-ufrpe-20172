@@ -45,6 +45,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/uniforme.php";
             <div class="form-group">
                 <label for="cod_cor">Código da cor:</label>
                 <select name="cod_cor" class="form-control">
+                    <option value="">Selecione a cor</option>
                     <?php
                     $dados = coresDisponiveis();
                     if (!$dados){
@@ -60,6 +61,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/uniforme.php";
             <div class="form-group">
                 <label for="nome">Nome do time:</label>
                 <select name="nome" class="form-control">
+                    <option value="">Selecione o time</option>
                     <?php
                     $dados = timesDisponiveis();
                     if (!$dados){
@@ -88,4 +90,3 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/uniforme.php";
 </body>
 </html>
 }
-

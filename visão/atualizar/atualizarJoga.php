@@ -52,6 +52,7 @@
 
             echo "<meta http-equiv='refresh' content='1; url=../visão/exibirJoga.php'>";
         } else {
+            $cpf = mascarar($cpf, 'cpf');
             $posicao = $resultado["posicao"];
             $data_inicio = $resultado["data_inicio"];
             $data_fim = $resultado["data_fim"];

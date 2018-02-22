@@ -17,6 +17,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
     <script src="/fbd/js/jquery.min.js"></script>
     <script src="/fbd/js/bootstrap.min.js"></script>
+    <script src="/fbd/js/jquery.mask.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -71,7 +72,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"placar\">Placar:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"placar\" value='$placar'>
+                            <input type=\"text\" required class=\"form-control placar\" name=\"placar\" value='$placar'>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"local\">Local:</label>
@@ -83,7 +84,8 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"rg\">RG do árbitro:</label>
-                            <select name=\"rg\" class=\"form-control\">";
+                            <select name=\"rg\" class=\"form-control\">
+                            <option value=''>Selecione o árbitro</option>";
                             if (!$dados){
                                 echo "<option readonly>Nenhum registro</option>";
                             } else {
@@ -107,3 +109,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
 
 </body>
 </html>
+
+<script type="text/javascript">
+    $('.placar').mask('0x0', {placeholder: '0x0'});
+</script>

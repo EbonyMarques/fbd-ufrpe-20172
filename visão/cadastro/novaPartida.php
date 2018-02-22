@@ -10,6 +10,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
     <link rel="stylesheet" href="/fbd/css/bootstrap.min.css">
     <script src="/fbd/js/jquery.min.js"></script>
     <script src="/fbd/js/bootstrap.min.js"></script>
+    <script src="/fbd/js/jquery.mask.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -41,6 +42,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
             <div class="form-group">
                 <label for="nome_time_casa">Nome do time da casa:</label>
                 <select name="nome_time_casa" class="form-control">
+                    <option value="">Selecione o time da casa</option>
                     <?php
                     $dados = timesDisponiveis();
                     if (!$dados){
@@ -56,6 +58,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
             <div class="form-group">
                 <label for="nome_time_fora">Nome do time de fora:</label>
                 <select name="nome_time_fora" class="form-control">
+                    <option value="">Selecione o time de fora</option>
                     <?php
                     $dados = timesDisponiveis();
                     if (!$dados){
@@ -70,7 +73,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
             </div>
             <div class="form-group">
                 <label for="placar">Placar:</label>
-                <input type="text" required class="form-control" name="placar">
+                <input type="text" required class="form-control placar" name="placar">
             </div>
             <div class="form-group">
                 <label for="local">Local:</label>
@@ -83,6 +86,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
             <div class="form-group">
                 <label for="rg">RG do árbitro:</label>
                 <select name="rg" class="form-control">
+                    <option value="">Selecione o árbitro</option>
                     <?php
                     $dados = arbitrosDisponiveis();
                     if (!$dados){
@@ -102,3 +106,6 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/partida.php";
 
 </body>
 </html>
+<script type="text/javascript">
+    $('.placar').mask('0x0', {placeholder: '0x0'});
+</script>

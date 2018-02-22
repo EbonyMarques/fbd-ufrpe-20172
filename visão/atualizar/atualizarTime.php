@@ -28,8 +28,8 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
                 <li><a href="../exibirTime.php">Time</a></li>
                 <li><a href="../exibirPartida.php">Partida</a></li>
                 <li><a href="../exibirArbitroPrincipal.php">Árbitro principal</a></li>
-                <li><a href="../exibirTimeAmador.php">Time amador</a></li>
-                <li><a href="../exibirTimeProfissional.php">Time profissional</a></li>
+                <li><a href="../exibirTimeAmador.php">Time Amador</a></li>
+                <li><a href="../exibirTimeProfissional.php">Time Profissional</a></li>
                 <li><a href="../exibirDiretor.php">Diretor</a></li>
                 <li><a href="../exibirPatrocinio.php">Patrocínio</a></li>
                 <li><a href="../exibirPatrocinador.php">Patrocinador</a></li>
@@ -61,12 +61,12 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/time.php";
                         <div class=\"form-group\">
                             <label for=\"tipo\">Tipo:</label>
                             <select name=\"tipo\" class=\"form-control\">";
-                            if ($tipo == "amador") {
-                                echo "<option selected value=\"amador\">amador</option>
-                                <option value=\"profissional\">profissional</option>";
+                            if ($tipo == "Amador") {
+                                echo "<option selected value=\"Amador\">Amador</option>
+                                <option value=\"Profissional\">Profissional</option>";
                             }else {
-                                echo "<option value=\"amador\">amador</option>
-                                <option selected value=\"profissional\">profissional</option>";
+                                echo "<option value=\"Amador\">Amador</option>
+                                <option selected value=\"Profissional\">Profissional</option>";
                             }echo "
                             </select>
                         </div>

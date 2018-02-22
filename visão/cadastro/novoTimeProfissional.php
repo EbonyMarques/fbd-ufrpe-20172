@@ -41,6 +41,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/timeProfissional.php";
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <select name="nome" class="form-control">
+                    <option value="">Selecione o time</option>
                     <?php
                     $dados = timesDisponiveis();
                     if (!$dados){

@@ -51,6 +51,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/arbitroPrincipal.php";
             echo "<meta http-equiv='refresh' content='1; url=../visão/exibirArbitro.php'>";
         } else {
             $nome = $resultado["nome"];
+            $rg = mascarar($rg, 'rg');
             $tipo_habilitacao = $resultado["tipo_habilitacao"];
 
             echo "<div class=\"container\">
@@ -66,7 +67,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/fbd/controlador/arbitroPrincipal.php";
                         </div>
                         <div class=\"form-group\">
                             <label for=\"tipo_habilitacao\">Tipo de habilitação:</label>
-                            <input type=\"text\" required class=\"form-control\" name=\"tipo_habilitacao\" value=\"$tipo_habilitacao\">
+                            <input type=\"text\" required class=\"form-control\" name=\"habilitacao\" value=\"$tipo_habilitacao\">
                         </div>
                         <input type=\"hidden\" value=\"atualizar\" name=\"acao\" />
                         <button type=\"submit\" required class=\"btn btn-success\">Atualizar</button>
