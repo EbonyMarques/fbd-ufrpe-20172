@@ -21,8 +21,8 @@
                 <li><a href="../exibirTime.php">Time</a></li>
                 <li><a href="../exibirPartida.php">Partida</a></li>
                 <li><a href="../exibirArbitroPrincipal.php">Árbitro principal</a></li>
-                <li><a href="../exibirTimeAmador.php">Time Amador</a></li>
-                <li><a href="../exibirTimeProfissional.php">Time Profissional</a></li>
+                <li><a href="../exibirTimeAmador.php">Time amador</a></li>
+                <li><a href="../exibirTimeProfissional.php">Time profissional</a></li>
                 <li><a href="../exibirDiretor.php">Diretor</a></li>
                 <li><a href="../exibirPatrocinio.php">Patrocínio</a></li>
                 <li><a href="../exibirPatrocinador.php">Patrocinador</a></li>
